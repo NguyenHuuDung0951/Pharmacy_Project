@@ -1,0 +1,39 @@
+.login-pane {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 15, 0, 0, 5);
+    -fx-padding: 20;
+}
+.login-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+.login-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #555;
+}
+.text-field {
+    -fx-background-color: transparent;
+    -fx-border-color: #bbb;
+    -fx-border-radius: 5;
+    -fx-padding: 5 8 5 8;
+    -fx-text-fill: #000;
+}
+.text-field:focused {
+    -fx-border-color: #409eff;
+    -fx-border-width: 2;
+}
+.login-button {
+    -fx-background-color: #409eff;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+.login-button:hover {
+    -fx-background-color: #66b1ff;
+}
+.login-button:pressed {
+    -fx-background-color: #337ecc;
+}
