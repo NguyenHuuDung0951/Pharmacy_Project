@@ -1,5 +1,6 @@
 package com.example.pharmacy_project.controller;
 
+import com.example.pharmacy_project.dao.taiKhoanDao;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -26,49 +27,51 @@ public class LoginController {
         txtPassword.setOnAction(actionEvent -> handleLogin(actionEvent));
     }
     @FXML
+    private taiKhoanDao dao = new taiKhoanDao();
+    @FXML
     public void handleLogin(javafx.event.ActionEvent actionEvent) {
-        String username = txtUsername.getText();
-        String password = txtPassword.getText();
+        String username = txtUsername.getText().trim();
+        String password = txtPassword.getText().trim();
+
         boolean valid = true;
-        if (username.isEmpty()){
-            lblErrorusername.setText(" Vui Lòng nhập Tên Đăng Nhập!!!");
+
+        if (username.isEmpty()) {
+            lblErrorusername.setText("Vui lòng nhập Tên Đăng Nhập!");
             valid = false;
-        }
-        else if(!"admin".equals(username)) {
-            lblErrorusername.setText("Sai Tên Đăng Nhập!!!");
-            valid = false;
-        }
-        else {
+        } else {
             lblErrorusername.setText("");
         }
-        if (password.isEmpty()){
-            lblErrorpassword.setText("Vui Lòng nhập Mật Khẩu!!!");
+
+        if (password.isEmpty()) {
+            lblErrorpassword.setText("Vui lòng nhập Mật Khẩu!");
             valid = false;
-        }
-        else if(!"123".equals(password)) {
-            lblErrorpassword.setText("Sai Mật Khẩu!!!");
-            valid = false;
-        }
-        else {
+        } else {
             lblErrorpassword.setText("");
         }
-        if(valid){
-            try {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/pharmacy_project/gui/MainView.fxml"));
-                Scene scene = new Scene(fxmlLoader.load());
-                Stage stage = new Stage();
-                stage.setTitle("Hello!");
-                stage.setScene(scene);
-                stage.setResizable(false);
-                stage.centerOnScreen();
-                stage.show();
 
-                Stage currenStage = (Stage) txtUsername.getScene().getWindow();
-                currenStage.close();
-            }
-            catch (Exception e){
-                e.printStackTrace();
+        if (valid) {
+            boolean success = dao.validateLogin(username, password);
+            if (success) {
+                try {
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/pharmacy_project/gui/MainView2.fxml"));
+                    Scene scene = new Scene(fxmlLoader.load());
+                    Stage stage = new Stage();
+                    stage.setTitle("Pharmacy Management");
+                    stage.setScene(scene);
+                    stage.setResizable(false);
+                    stage.centerOnScreen();
+                    stage.show();
+
+                    // Đóng cửa sổ login
+                    Stage currentStage = (Stage) txtUsername.getScene().getWindow();
+                    currentStage.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            } else {
+                lblErrorpassword.setText("Sai Tên Đăng Nhập hoặc Mật Khẩu!");
             }
         }
     }
+
 }
