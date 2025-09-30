@@ -6,15 +6,13 @@ public class TaiKhoan {
     private String matKhau;
     private String vaiTro;
     private String trangThai;
-    private NhanVien nhanVien;
 
-    public TaiKhoan(String maTaiKhoan, String tenDangNhap, String matKhau, String vaiTro, String trangThai, NhanVien nhanVien) {
+    public TaiKhoan(String maTaiKhoan, String tenDangNhap, String matKhau, String vaiTro, String trangThai) {
         this.maTaiKhoan = maTaiKhoan;
         this.tenDangNhap = tenDangNhap;
         this.matKhau = matKhau;
         this.vaiTro = vaiTro;
         this.trangThai = trangThai;
-        this.nhanVien = nhanVien;
     }
 
     public TaiKhoan(TaiKhoan tk) {
@@ -23,7 +21,6 @@ public class TaiKhoan {
         this.matKhau = tk.matKhau;
         this.vaiTro = tk.vaiTro;
         this.trangThai = tk.trangThai;
-        this.nhanVien = tk.nhanVien;
     }
 
     public TaiKhoan() {
@@ -47,10 +44,6 @@ public class TaiKhoan {
 
     public String getTrangThai() {
         return trangThai;
-    }
-
-    public NhanVien getNhanVien() {
-        return nhanVien;
     }
 
     public void setMaTaiKhoan(String maTaiKhoan) {
@@ -82,10 +75,6 @@ public class TaiKhoan {
         this.trangThai = trangThai;
     }
 
-    public void setNhanVien(NhanVien nhanVien) {
-        this.nhanVien = nhanVien;
-    }
-
     @Override
     public String toString() {
         return "TaiKhoan{" +
@@ -94,7 +83,6 @@ public class TaiKhoan {
                 ", matKhau='" + matKhau + '\'' +
                 ", vaiTro='" + vaiTro + '\'' +
                 ", trangThai='" + trangThai + '\'' +
-                ", nhanVien=" + nhanVien +
                 '}';
     }
 }
