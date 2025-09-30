@@ -39,19 +39,19 @@ public class taiKhoanDao {
     }
 
     // Hàm thêm tài khoản mới
-    public boolean addTaiKhoan(String username, String password, String role, String status, String maNhanVien) {
-        String sql = "INSERT INTO TaiKhoan (tenDangNhap, matKhau, vaiTro, trangThai, maNhanVien) VALUES (?, ?, ?, ?, ?)";
+    public boolean addTaiKhoan(String maTaiKhoan, String username, String password, String role, String status) {
+        String sql = "INSERT INTO TaiKhoan (maTaiKhoan, tenDangNhap, matKhau, vaiTro, trangThai) VALUES (?, ?, ?, ?, ?)";
         try (Connection conn = ConnectDB.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             // Hash mật khẩu trước khi lưu vào DB
             String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt(10));
 
-            stmt.setString(1, username);
-            stmt.setString(2, hashedPassword);
-            stmt.setString(3, role);
-            stmt.setString(4, status);
-            stmt.setString(5, maNhanVien);
+            stmt.setString(1, maTaiKhoan);
+            stmt.setString(2, username);
+            stmt.setString(3, hashedPassword);
+            stmt.setString(4, role);
+            stmt.setString(5, status);
 
             int rows = stmt.executeUpdate();
             return rows > 0; // Trả về true nếu insert thành công
