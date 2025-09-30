@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="455.0" prefWidth="1388.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Pane prefHeight="460.0" prefWidth="300.0">
          <children>
@@ -47,15 +46,15 @@
             </Pane>
          </children>
       </Pane>
-      <Pane layoutX="300.0" prefHeight="460.0" prefWidth="1066.0">
+      <Pane layoutX="300.0" prefHeight="460.0" prefWidth="1087.0">
          <children>
             <TextField layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="300.0" promptText="Tìm theo mã, tên nhân viên" style="-fx-border-radius: 20px; -fx-background-radius: 20px;" />
             <Pane layoutX="390.0" layoutY="14.0" prefHeight="25.0" prefWidth="676.0">
                <children>
-                  <Button layoutX="162.0" mnemonicParsing="false" style="-fx-background-color: white; -fx-background-radius: 10px; -fx-border-color: #DDDDDD; -fx-border-radius: 10px;" text="Thêm nhân viên" />
+                  <Button layoutX="296.0" layoutY="-1.0" mnemonicParsing="false" style="-fx-background-color: white; -fx-background-radius: 10px; -fx-border-color: #DDDDDD; -fx-border-radius: 10px;" text="Thêm nhân viên" />
                </children>
             </Pane>
-            <TableView layoutX="14.0" layoutY="46.0" prefHeight="394.0" prefWidth="1053.0" style="-fx-background-color: white; -fx-background-radius: 20px; -fx-border-radius: 20px;" stylesheets="@../../../../../css/style_listempl.css">
+            <TableView layoutX="15.0" layoutY="50.0" prefHeight="394.0" prefWidth="1072.0" style="-fx-background-color: white; -fx-background-radius: 20px; -fx-border-radius: 20px;" stylesheets="@../../../../../css/style_listempl.css">
               <columns>
                 <TableColumn prefWidth="75.0" text="C1" />
                 <TableColumn prefWidth="75.0" text="C2" />

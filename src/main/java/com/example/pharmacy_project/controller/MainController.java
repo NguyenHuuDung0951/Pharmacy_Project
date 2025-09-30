@@ -1,7 +1,10 @@
 package com.example.pharmacy_project.controller;
 
 import com.example.pharmacy_project.connectDB.ConnectDB;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -68,4 +71,25 @@ public class MainController {
     }
 
 
+    public void list_empl(ActionEvent actionEvent) {
+        try {
+            Parent content = FXMLLoader.load(
+                    getClass().getResource("/com/example/pharmacy_project/gui/admin/list_empl.fxml")
+            );
+            rootPane.setCenter(content);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void overview(ActionEvent actionEvent) {
+        try {
+            Parent content = FXMLLoader.load(
+                    getClass().getResource("/com/example/pharmacy_project/gui/overview.fxml")
+            );
+            rootPane.setCenter(content);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
