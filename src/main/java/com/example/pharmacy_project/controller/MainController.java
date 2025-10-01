@@ -92,4 +92,15 @@ public class MainController {
             e.printStackTrace();
         }
     }
+
+    public void danhSachKhachHang(ActionEvent actionEvent) {
+        try {
+            Parent content = FXMLLoader.load(
+                    getClass().getResource("/com/example/pharmacy_project/gui/DanhSachKhachHang.fxml")
+            );
+            rootPane.setCenter(content);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
