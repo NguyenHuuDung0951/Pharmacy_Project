@@ -12,7 +12,7 @@ create table TaiKhoan
 (
 	maTaiKhoan varchar(20) primary key,
 	tenDangNhap varchar(20) not null,
-	matKhau varchar(100) not null,
+	matKhau varchar(150) not null,
 	vaiTro varchar(40) not null,
 	trangThai varchar(20) check ( trangThai in('Kích Hoạt','Khóa')),
 )
