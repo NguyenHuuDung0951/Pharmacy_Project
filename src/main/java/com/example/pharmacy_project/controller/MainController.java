@@ -104,5 +104,26 @@ public class MainController {
         }
     }
 
+    public void danhsachthuoc(ActionEvent actionEvent) {
+        try {
+            Parent loadder=FXMLLoader.load
+                    (getClass().getResource("/com/example/pharmacy_project/gui/DanhSachThuoc.fxml"));
+            rootPane.setCenter(loadder);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
 
+    public void danhSachKhuyenMai(ActionEvent actionEvent) {
+        try {
+            Parent loader=FXMLLoader.load(getClass().getResource("/com/example/pharmacy_project/gui/KhuyenMai.fxml"));
+            rootPane.setCenter(loader);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
 }
