@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 
-<BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmacy_project.controller.MainController">
+<BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmacy_project.controller.MainController">
    <top>
       <AnchorPane prefHeight="100.0" prefWidth="1366.0" BorderPane.alignment="CENTER">
          <children>
@@ -37,28 +37,33 @@
             </Pane>
             <Pane layoutX="-23.0" layoutY="54.0" prefHeight="46.0" prefWidth="1388.0" style="-fx-background-color: #0070F4;">
                <children>
-                  <MenuBar fx:id="menuBar" layoutX="71.0" layoutY="3.0" prefHeight="40.0" prefWidth="593.0" stylesheets="@../../../../css/menu.css">
+                  <MenuBar fx:id="menuBar" layoutX="71.0" layoutY="3.0" prefHeight="40.0" prefWidth="632.0" stylesheets="@../../../../css/menu.css">
                     <menus>
                       <Menu mnemonicParsing="false" text="Hệ Thống">
                            <items>
                               <MenuItem mnemonicParsing="false" onAction="#overview" text="Tổng Quan" />
-                              <Menu mnemonicParsing="false" text="Nhân Viên">
-                                  <items>
-                                      <MenuItem mnemonicParsing="false" onAction="#list_empl" text="Danh Sách Nhân Viên" />
-                                      <MenuItem mnemonicParsing="false" text="Bảng Chấm Công" />
-                                      <MenuItem mnemonicParsing="false" text="Bảng Lương" />
-                                      <MenuItem mnemonicParsing="false" text="Thiết Lập Nhân Viên" />
-      
-                                  </items>
-                              </Menu>
                            </items></Menu>
-                      <Menu mnemonicParsing="false" text="Danh Muc Thuốc">
+                      <Menu mnemonicParsing="false" text="Thuốc">
                         <items>
-                          <MenuItem mnemonicParsing="false" onAction="#danhsachthuoc" text="Thuốc" />
-                            <MenuItem mnemonicParsing="false" text="Thực Phẩm Chức Năng" />
-                            <MenuItem mnemonicParsing="false" onAction="#danhSachKhuyenMai" text="Khác" />
+                          <MenuItem mnemonicParsing="false" onAction="#danhsachthuoc" text="Danh Sách Thuốc" />
+                            <MenuItem mnemonicParsing="false" onAction="#danhSachKhuyenMai" text="Khuyến Mãi" />
                         </items>
                       </Menu>
+                        <Menu mnemonicParsing="false" text="Nhân Viên">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#list_empl" text="Danh Sách Nhân Viên" />
+                                <MenuItem mnemonicParsing="false" text="Bảng Chấm Công" />
+                                <MenuItem mnemonicParsing="false" text="Bảng Lương" />
+                                <MenuItem mnemonicParsing="false" text="Thiết Lập Nhân Viên" />
+
+                                        </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Đơn Hàng">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Đặt Thuốc" />
+                              <MenuItem mnemonicParsing="false" onAction="#handle_listOrder" text="Hóa Đơn" />
+                          </items>
+                        </Menu>
                       <Menu mnemonicParsing="false" text="Khách Hàng">
                         <items>
                           <MenuItem mnemonicParsing="false" onAction="#danhSachKhachHang" text="Khách Hàng Mới" />
