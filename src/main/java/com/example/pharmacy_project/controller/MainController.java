@@ -117,13 +117,19 @@ public class MainController {
     }
 
     public void danhSachKhuyenMai(ActionEvent actionEvent) {
+
+    }
+
+    public void handle_listOrder(ActionEvent actionEvent) {
         try {
-            Parent loader=FXMLLoader.load(getClass().getResource("/com/example/pharmacy_project/gui/KhuyenMai.fxml"));
-            rootPane.setCenter(loader);
+            Parent loadder=FXMLLoader.load
+                    (getClass().getResource("/com/example/pharmacy_project/gui/dsHoaDon.fxml"));
+            rootPane.setCenter(loadder);
         }
         catch (Exception e)
         {
             e.printStackTrace();
         }
     }
+
 }
