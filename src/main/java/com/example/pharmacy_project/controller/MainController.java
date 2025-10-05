@@ -132,4 +132,15 @@ public class MainController {
         }
     }
 
+    public void handle_dsDatThuoc(ActionEvent actionEvent) {
+        try {
+            Parent loadder=FXMLLoader.load
+                    (getClass().getResource("/com/example/pharmacy_project/gui/dsDonDat.fxml"));
+            rootPane.setCenter(loadder);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
 }
