@@ -42,12 +42,21 @@
                       <Menu mnemonicParsing="false" text="Hệ Thống">
                            <items>
                               <MenuItem mnemonicParsing="false" onAction="#overview" text="Tổng Quan" />
+                              <Menu mnemonicParsing="false" text="Nhân Viên">
+                                  <items>
+                                      <MenuItem mnemonicParsing="false" onAction="#list_empl" text="Danh Sách Nhân Viên" />
+                                      <MenuItem mnemonicParsing="false" text="Bảng Chấm Công" />
+                                      <MenuItem mnemonicParsing="false" text="Bảng Lương" />
+                                      <MenuItem mnemonicParsing="false" text="Thiết Lập Nhân Viên" />
+      
+                                  </items>
+                              </Menu>
                            </items></Menu>
                       <Menu mnemonicParsing="false" text="Danh Muc Thuốc">
                         <items>
-                          <MenuItem mnemonicParsing="false" text="Thuốc" />
+                          <MenuItem mnemonicParsing="false" onAction="#danhsachthuoc" text="Thuốc" />
                             <MenuItem mnemonicParsing="false" text="Thực Phẩm Chức Năng" />
-                            <MenuItem mnemonicParsing="false" text="Khác" />
+                            <MenuItem mnemonicParsing="false" onAction="#danhSachKhuyenMai" text="Khác" />
                         </items>
                       </Menu>
                       <Menu mnemonicParsing="false" text="Khách Hàng">
@@ -57,15 +66,6 @@
 
                         </items>
                       </Menu>
-                        <Menu mnemonicParsing="false" text="Nhân Viên">
-                            <items>
-                                <MenuItem mnemonicParsing="false" onAction="#list_empl" text="Danh Sách Nhân Viên" />
-                                <MenuItem mnemonicParsing="false" text="Bảng Chấm Công" />
-                                <MenuItem mnemonicParsing="false" text="Bảng Lương" />
-                                <MenuItem mnemonicParsing="false" text="Thiết Lập Nhân Viên" />
-
-                            </items>
-                        </Menu>
                         <Menu mnemonicParsing="false" text="Thống Kê">
                             <items>
                                 <MenuItem mnemonicParsing="false" text="Doanh Thu" />
