@@ -20,6 +20,7 @@ public class PharmacyApp extends Application {
 
     }
 
+
     public static void main(String[] args) {
         launch();
     }

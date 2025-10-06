@@ -1,5 +1,5 @@
 /*
- * @ (#) $NAME.java     1.0     9/30/2025
+ * @ (#) $NAME.java     1.0     10/5/2025
  *
  * Copyright (c) 2025 IUH. All rights reserved.
  */
@@ -16,14 +16,14 @@ import javafx.stage.Stage;
  * @description:
  * @author: Khang, Le Hoang
  * @version: 1.0
- * @created: 9/30/2025 10:44 PM
+ * @created: 10/5/2025 3:47 PM
  */
-public class ListEmplController {
-    public void handle_addEmpl(ActionEvent actionEvent) {
+public class DsHoaDonController {
+    public void handle_addOrder(ActionEvent actionEvent) {
         try {
-            Parent loader = FXMLLoader.load(getClass().getResource("/com/example/pharmacy_project/gui/themNhanVien.fxml"));
+            Parent loader = FXMLLoader.load(getClass().getResource("/com/example/pharmacy_project/gui/lapHoaDon.fxml"));
             Stage stage=new Stage();
-            stage.setTitle("Thêm nhân viên");
+            stage.setTitle("Tạo hóa đơn");
             stage.setScene(new Scene(loader));
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.showAndWait();
