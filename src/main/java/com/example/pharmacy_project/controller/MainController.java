@@ -11,6 +11,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
@@ -100,6 +101,15 @@ public class MainController {
             );
             rootPane.setCenter(content);
         } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void thongKeKhachHang(ActionEvent actionEvent){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/com/example/pharmacy_project/gui/admin/ThongKeKhachHang.fxml"));
+            rootPane.setCenter(root);
+        }
+        catch (Exception e){
             e.printStackTrace();
         }
     }
