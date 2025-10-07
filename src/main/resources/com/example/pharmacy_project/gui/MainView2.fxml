@@ -47,6 +47,7 @@
                         <items>
                           <MenuItem mnemonicParsing="false" onAction="#danhsachthuoc" text="Danh Sách Thuốc" />
                             <MenuItem mnemonicParsing="false" onAction="#danhSachKhuyenMai" text="Khuyến Mãi" />
+                              <MenuItem mnemonicParsing="false" onAction="#handle_dsPhieuNhap" text="Nhập Thuốc" />
                         </items>
                       </Menu>
                         <Menu mnemonicParsing="false" text="Nhân Viên">

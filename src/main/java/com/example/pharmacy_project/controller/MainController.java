@@ -4,6 +4,7 @@ import com.example.pharmacy_project.connectDB.ConnectDB;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
@@ -70,6 +71,9 @@ public class MainController {
         return connection;
     }
 
+    public void setCenter(Node node) {
+        rootPane.setCenter(node);
+    }
 
     public void list_empl(ActionEvent actionEvent) {
         try {
@@ -143,5 +147,22 @@ public class MainController {
             e.printStackTrace();
         }
     }
+    public void openDsPhieuNhap() {
+        try {
+            FXMLLoader loader = new FXMLLoader(
+                    getClass().getResource("/com/example/pharmacy_project/gui/dsPhieuNhap.fxml")
+            );
+            Parent content = loader.load();
 
+            DsPhieuNhapController child = loader.getController();
+            child.setMainController(this);
+
+            setCenter(content);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void handle_dsPhieuNhap(ActionEvent actionEvent) {
+        openDsPhieuNhap();
+    }
 }
