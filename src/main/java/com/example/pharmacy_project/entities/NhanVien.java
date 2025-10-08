@@ -27,6 +27,10 @@ public class NhanVien {
         this.chucVu = nv.chucVu;
     }
 
+    public NhanVien(String maNhanVien) {
+        this.maNhanVien = maNhanVien;
+    }
+
     public String getMaNhanVien() {
         return maNhanVien;
     }
