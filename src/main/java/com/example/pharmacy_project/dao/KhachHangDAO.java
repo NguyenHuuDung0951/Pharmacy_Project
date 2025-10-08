@@ -23,7 +23,7 @@ import java.util.ArrayList;
  * @created: 08 Oct 2025 13:25
  */
 public class KhachHangDAO {
-    public  KhachHangDAO(){}
+    public KhachHangDAO(){}
     public ArrayList<KhachHang> getAllTbKhachHang() {
         ArrayList<KhachHang> dsKhachHang = new ArrayList<>();
         try {
