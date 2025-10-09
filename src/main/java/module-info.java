@@ -16,7 +16,7 @@ module com.example.pharmacy_project {
 
     opens com.example.pharmacy_project to javafx.fxml;
     opens com.example.pharmacy_project.controller to javafx.fxml;
-
+    opens com.example.pharmacy_project.entities to javafx.base;
     exports com.example.pharmacy_project;
     exports com.example.pharmacy_project.controller;
 }

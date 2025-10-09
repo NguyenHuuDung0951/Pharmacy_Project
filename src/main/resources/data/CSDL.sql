@@ -195,3 +195,7 @@ create table ChiTietPhieuDat
 	foreign key (maPhieuDat) references PhieuDat(maPhieuDat),
 	foreign key (maThuoc) references Thuoc(maThuoc)
 )
+
+INSERT INTO KhachHang values 
+('KH2', '0917774020', 'Lê Hoàng Khang', 'Vip', 0, '2025-02-26', 'NV1'),
+('KH3', '0918011626', 'Nguyễn Văn Sỹ', 'Thường', 1, '2025-09-10', 'NV1');

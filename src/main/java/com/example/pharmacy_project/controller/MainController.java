@@ -121,7 +121,14 @@ public class MainController {
     }
 
     public void danhSachKhuyenMai(ActionEvent actionEvent) {
-
+        try {
+            Parent laoder=FXMLLoader.load(getClass().getResource("/com/example/pharmacy_project/gui/KhuyenMai.fxml"));
+            rootPane.setCenter(laoder);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 
     public void handle_listOrder(ActionEvent actionEvent) {
