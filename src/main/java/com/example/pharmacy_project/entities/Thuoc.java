@@ -5,135 +5,146 @@ public class Thuoc {
     private String tenThuoc;
     private String hamLuong;
     private String dangThuoc;
-    private Double giaThuoc;
+    private double giaThuoc;
     private String donViTinh;
-    private Boolean yeuCauKeDon;
     private String nhaSanXuat;
-    private TrangThai trangThai;
+    private String trangThai;
+    private String anhDaiDien;
+    private Thue thue;
+    private KeThuoc keThuoc;
+    private NhanVien nhanVien;
+    private LoThuoc loThuoc;
+    private NhomThuoc nhomThuoc;
 
-    public Thuoc(String maThuoc, String tenThuoc, String hamLuong, String dangThuoc, Double giaThuoc, String donViTinh, Boolean yeuCauKeDon, String nhaSanXuat, TrangThai trangThai) {
+    public Thuoc(String maThuoc, String tenThuoc, String hamLuong, String dangThuoc, double giaThuoc, String donViTinh, String nhaSanXuat, String trangThai, String anhDaiDien, Thue thue, KeThuoc keThuoc, NhanVien nhanVien, LoThuoc loThuoc, NhomThuoc nhomThuoc) {
         this.maThuoc = maThuoc;
-        setMaThuoc(maThuoc);
         this.tenThuoc = tenThuoc;
-        setTenThuoc(tenThuoc);
         this.hamLuong = hamLuong;
-        setHamLuong(hamLuong);
         this.dangThuoc = dangThuoc;
-        setDangThuoc(dangThuoc);
         this.giaThuoc = giaThuoc;
-        setGiaThuoc(giaThuoc);
         this.donViTinh = donViTinh;
-        setGiaThuoc(giaThuoc);
-        this.yeuCauKeDon = yeuCauKeDon;
         this.nhaSanXuat = nhaSanXuat;
         this.trangThai = trangThai;
+        this.anhDaiDien = anhDaiDien;
+        this.thue = thue;
+        this.keThuoc = keThuoc;
+        this.nhanVien = nhanVien;
+        this.loThuoc = loThuoc;
+        this.nhomThuoc = nhomThuoc;
     }
 
-    public Thuoc() {
-    }
-    public Thuoc(Thuoc other) {
-        this.maThuoc = other.maThuoc;
-        this.tenThuoc = other.tenThuoc;
-        this.hamLuong = other.hamLuong;
-        this.dangThuoc = other.dangThuoc;
-        this.giaThuoc = other.giaThuoc;
-        this.donViTinh = other.donViTinh;
-        this.yeuCauKeDon = other.yeuCauKeDon;
-        this.nhaSanXuat = other.nhaSanXuat;
-        this.trangThai = other.trangThai;
-    }
-
-    public void setMaThuoc(String maThuoc) {
-        if(!maThuoc.matches("^TH\\d{3}")){
-            throw new IllegalArgumentException("Mã nhân viên không hợp lệ! (Đúng dạng NVxxx, ví dụ NV001)");
-        }
-        this.maThuoc = maThuoc;
-    }
-
-    public void setTenThuoc(String tenThuoc) {
-        if (tenThuoc.isEmpty() || tenThuoc.isBlank() || tenThuoc.length() <= 0){
-            throw new IllegalArgumentException("Tên thuốc không được bỏ trống!");
-        }
-        if(tenThuoc.length() <2 || tenThuoc.length()>50){
-            throw new IllegalArgumentException("Tên thuốc phải từ 2-50 ký tự!");
-        }
-        this.tenThuoc = tenThuoc;
-    }
-
-    public void setHamLuong(String hamLuong) {
-        if(hamLuong.length() <2 || hamLuong.length()>50){
-            throw new IllegalArgumentException("Hàm Lượng phải từ 2-50 ký tự!");
-        }
-        if (hamLuong.isBlank() || hamLuong.isEmpty()){
-            throw new IllegalArgumentException("Hàm lượng không được để trống");
-        }
-        this.hamLuong = hamLuong;
-    }
-
-    public void setDangThuoc(String dangThuoc) {
-        this.dangThuoc = dangThuoc;
-    }
-
-    public void setGiaThuoc(Double giaThuoc) {
-        if (giaThuoc <= 0 ){
-            throw new IllegalArgumentException("Giá thuốc phải >=0");
-        }
-        this.giaThuoc = giaThuoc;
-    }
-
-    public void setDonViTinh(String donViTinh) {
-        if (donViTinh.isEmpty() || donViTinh.isBlank()){
-            throw new IllegalArgumentException("Đơn vị tính không được để trống");
-        }
-        this.donViTinh = donViTinh;
-    }
-
-    public void setYeuCauKeDon(Boolean yeuCauKeDon) {
-        this.yeuCauKeDon = yeuCauKeDon;
-    }
-
-    public void setNhaSanXuat(String nhaSanXuat) {
-        this.nhaSanXuat = nhaSanXuat;
-    }
-
-    public void setTrangThai(TrangThai trangThai) {
-        this.trangThai = trangThai;
-    }
+    public Thuoc(){}
 
     public String getMaThuoc() {
         return maThuoc;
+    }
+
+    public void setMaThuoc(String maThuoc) {
+        this.maThuoc = maThuoc;
     }
 
     public String getTenThuoc() {
         return tenThuoc;
     }
 
+    public void setTenThuoc(String tenThuoc) {
+        this.tenThuoc = tenThuoc;
+    }
+
     public String getHamLuong() {
         return hamLuong;
+    }
+
+    public void setHamLuong(String hamLuong) {
+        this.hamLuong = hamLuong;
     }
 
     public String getDangThuoc() {
         return dangThuoc;
     }
 
-    public Double getGiaThuoc() {
+    public void setDangThuoc(String dangThuoc) {
+        this.dangThuoc = dangThuoc;
+    }
+
+    public double getGiaThuoc() {
         return giaThuoc;
+    }
+
+    public void setGiaThuoc(double giaThuoc) {
+        this.giaThuoc = giaThuoc;
     }
 
     public String getDonViTinh() {
         return donViTinh;
     }
 
-    public Boolean getYeuCauKeDon() {
-        return yeuCauKeDon;
+    public void setDonViTinh(String donViTinh) {
+        this.donViTinh = donViTinh;
     }
 
     public String getNhaSanXuat() {
         return nhaSanXuat;
     }
 
-    public TrangThai getTrangThai() {
+    public void setNhaSanXuat(String nhaSanXuat) {
+        this.nhaSanXuat = nhaSanXuat;
+    }
+
+    public String getTrangThai() {
         return trangThai;
+    }
+
+    public void setTrangThai(String trangThai) {
+        this.trangThai = trangThai;
+    }
+
+    public String getAnhDaiDien() {
+        return anhDaiDien;
+    }
+
+    public void setAnhDaiDien(String anhDaiDien) {
+        this.anhDaiDien = anhDaiDien;
+    }
+
+    public Thue getThue() {
+        return thue;
+    }
+
+    public void setThue(Thue thue) {
+        this.thue = thue;
+    }
+
+    public KeThuoc getKeThuoc() {
+        return keThuoc;
+    }
+
+    public void setKeThuoc(KeThuoc keThuoc) {
+        this.keThuoc = keThuoc;
+    }
+
+    public NhanVien getNhanVien() {
+        return nhanVien;
+    }
+
+    public void setNhanVien(NhanVien nhanVien) {
+        this.nhanVien = nhanVien;
+    }
+
+    public LoThuoc getLoThuoc() {
+        return loThuoc;
+    }
+
+    public void setLoThuoc(LoThuoc loThuoc) {
+        this.loThuoc = loThuoc;
+    }
+
+    public NhomThuoc getNhomThuoc() {
+        return nhomThuoc;
+    }
+
+    public void setNhomThuoc(NhomThuoc nhomThuoc) {
+        this.nhomThuoc = nhomThuoc;
     }
 
     @Override
@@ -145,9 +156,14 @@ public class Thuoc {
                 ", dangThuoc='" + dangThuoc + '\'' +
                 ", giaThuoc=" + giaThuoc +
                 ", donViTinh='" + donViTinh + '\'' +
-                ", yeuCauKeDon=" + yeuCauKeDon +
                 ", nhaSanXuat='" + nhaSanXuat + '\'' +
-                ", trangThai=" + trangThai +
+                ", trangThai='" + trangThai + '\'' +
+                ", anhDaiDien='" + anhDaiDien + '\'' +
+                ", thue=" + thue +
+                ", keThuoc=" + keThuoc +
+                ", nhanVien=" + nhanVien +
+                ", loThuoc=" + loThuoc +
+                ", nhomThuoc=" + nhomThuoc +
                 '}';
     }
 }

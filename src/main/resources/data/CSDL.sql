@@ -197,5 +197,41 @@ create table ChiTietPhieuDat
 )
 
 INSERT INTO KhachHang values 
-('KH2', '0917774020', 'Lê Hoàng Khang', 'Vip', 0, '2025-02-26', 'NV1'),
-('KH3', '0918011626', 'Nguyễn Văn Sỹ', 'Thường', 1, '2025-09-10', 'NV1');
+('KH2', '0917774020', 'Lê Hoàng Khang', 'Vip', 0, '2025-02-26', 'NV001'),
+('KH3', '0918011626', 'Nguyễn Văn Sỹ', 'Thường', 1, '2025-09-10', 'NV001');
+
+insert into ChucVu values
+('CV001','Quản lý'),
+('CV002','Nhân viên')
+
+insert into NhaCungCap values
+('NCC001','Long Châu','0913343123','tphcm'),
+('NCC002','Minh Châu','0913343456','tphcm'),
+('NCC003','Pharmacity','0911343123','tphcm')
+insert into NhanVien values
+('NV001','Nguyễn Hữu Dũng','0935765186',N'Gò vấp, tphcm','asdf','CV001','TK001'),
+('NV002','Nguyễn Văn Sỹ','0372145686','Q12, tphcm','asdf','CV001','TK002'),
+('NV003','Nguyễn Đình Hùng','0945812321','Gò vấp, tphcm','asdf','CV001','TK003')
+INSERT INTO LoThuoc VALUES
+('LT01', 'L001', '2025-01-01', '2027-01-01', 10000, 500, N'Lô A'),
+('LT02', 'L002', '2025-05-01', '2027-05-01', 12000, 300, N'Lô B');
+insert into PhieuNhap values
+('PN001','2025-8-10', N'Đã nhập','NCC001','NV001'),
+('PN002','2025-8-10', N'Đã nhập','NCC002','NV002')
+insert into ChiTietPhieuNhap values
+(50,'132000','PN001','LT01'),
+(80,'142000','PN002','LT02')
+insert into KeThuoc values
+('K001','A1.1','Kệ dài','100'),
+('K002','A2.2','Kệ dài','120')
+
+insert into Thue values
+('T001','Thuế GTGT','2025-01-01','2030-01-01',5.0)
+insert into KhuyenMai values
+('KM001','Khuyến mãi khai trương','2025-01-01','2025-12-12',10,1)
+
+insert into NhomThuoc values
+('N001', N'Thuốc hô hấp')
+insert into Thuoc values
+('TH001', 'Ethambutol', '500mg', N'Rắn', 25000, 'Vien', 'Pharmacity', 'Đang Kinh Doanh', 'asdad', 'T001', 'K001', 'NV001', 'LT01', 'N001'),
+('TH002', 'Turbezid', '500mg', N'Rắn', 25000, 'Vien', 'Pharmacity', 'Đang Kinh Doanh', 'asdad', 'T001', 'K001', 'NV001', 'LT01', 'N001')
