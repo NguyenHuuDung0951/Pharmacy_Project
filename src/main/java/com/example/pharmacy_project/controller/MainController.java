@@ -6,11 +6,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -171,5 +174,30 @@ public class MainController {
     }
     public void handle_dsPhieuNhap(ActionEvent actionEvent) {
         openDsPhieuNhap();
+    }
+
+    public void handle_lapPhieuDat(ActionEvent actionEvent) {
+        try {
+            Parent loader = FXMLLoader.load(getClass().getResource("/com/example/pharmacy_project/gui/lapPhieuDat.fxml"));
+            Stage stage=new Stage();
+            stage.setTitle("Đặt thuốc");
+            stage.setScene(new Scene(loader));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void handle_addOrder(ActionEvent actionEvent) {
+        try {
+            Parent loader = FXMLLoader.load(getClass().getResource("/com/example/pharmacy_project/gui/lapHoaDon.fxml"));
+            Stage stage=new Stage();
+            stage.setTitle("Tạo hóa đơn");
+            stage.setScene(new Scene(loader));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }
