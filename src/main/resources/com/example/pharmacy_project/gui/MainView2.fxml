@@ -50,7 +50,7 @@
             </Pane>
             <Pane layoutX="-23.0" layoutY="60.0" prefHeight="40.0" prefWidth="1388.0" style="-fx-background-color: #0070F4;">
                <children>
-                  <MenuBar fx:id="menuBar" layoutX="24.0" layoutY="1.0" prefHeight="40.0" prefWidth="721.0" stylesheets="@../../../../css/menu.css">
+                  <MenuBar fx:id="menuBar" layoutX="22.0" layoutY="-4.0" prefHeight="48.0" prefWidth="1366.0" stylesheets="@../../../../css/menu.css">
                     <menus>
                       <Menu mnemonicParsing="false" text="Hệ Thống">
                            <items>
@@ -61,7 +61,7 @@
                           <MenuItem mnemonicParsing="false" onAction="#danhsachthuoc" text="Tra Cứu" />
                               <MenuItem mnemonicParsing="false" text="Thêm Thuốc" />
                               <SeparatorMenuItem mnemonicParsing="false" />
-                              <Menu mnemonicParsing="false" text="Nhập Thuốc">
+                              <Menu mnemonicParsing="false" text="Đơn Nhập">
                                 <items>
                                   <MenuItem mnemonicParsing="false" onAction="#handle_dsPhieuNhap" text="Tra Cứu Phiếu Nhập" />
                                     <MenuItem mnemonicParsing="false" text="Thêm Phiếu Nhập" />
@@ -80,8 +80,26 @@
                         </Menu>
                         <Menu mnemonicParsing="false" text="Đơn Hàng">
                           <items>
-                            <MenuItem mnemonicParsing="false" onAction="#handle_dsDatThuoc" text="Đặt Thuốc" />
-                              <MenuItem mnemonicParsing="false" onAction="#handle_listOrder" text="Hóa Đơn" />
+                              <Menu mnemonicParsing="false" text="Đơn Đặt Thuốc">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" onAction="#handle_dsDatThuoc" text="Tra Cứu Đơn Đặt" />
+                                    <MenuItem mnemonicParsing="false" onAction="#handle_lapPhieuDat" text="Lập Đơn Đặt Thuốc" />
+                                </items>
+                              </Menu>
+                              <SeparatorMenuItem mnemonicParsing="false" />
+                              <Menu mnemonicParsing="false" text="Hóa Đơn">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" onAction="#handle_listOrder" text="Tra Cứu Hóa Đơn" />
+                                    <MenuItem mnemonicParsing="false" onAction="#handle_addOrder" text="Lập Hóa Đơn" />
+                                </items>
+                              </Menu>
+                              <SeparatorMenuItem mnemonicParsing="false" />
+                              <Menu mnemonicParsing="false" text="Đơn Đổi/Trả">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Tra Cứu Đơn Đổi/Trả" />
+                                    <MenuItem mnemonicParsing="false" text="Lập Đơn Đổi/Trả" />
+                                 </items>
+                              </Menu>
                           </items>
                         </Menu>
                       <Menu mnemonicParsing="false" text="Khách Hàng">
