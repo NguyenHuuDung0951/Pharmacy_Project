@@ -19,16 +19,5 @@ import javafx.stage.Stage;
  * @created: 9/30/2025 10:44 PM
  */
 public class ListEmplController {
-    public void handle_addEmpl(ActionEvent actionEvent) {
-        try {
-            Parent loader = FXMLLoader.load(getClass().getResource("/com/example/pharmacy_project/gui/themNhanVien.fxml"));
-            Stage stage=new Stage();
-            stage.setTitle("Thêm nhân viên");
-            stage.setScene(new Scene(loader));
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.showAndWait();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
+
 }

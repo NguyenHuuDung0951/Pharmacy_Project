@@ -15,12 +15,5 @@ import javafx.scene.Parent;
  * @created: 10/7/2025 12:44 PM
  */
 public class LapPhieuNhapController {
-    private MainController mainController;
 
-    public void setMainController(MainController mainController) {
-        this.mainController = mainController;
-    }
-    public void handle_quayLai(ActionEvent actionEvent) {
-        mainController.openDsPhieuNhap();
-    }
 }
