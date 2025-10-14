@@ -235,29 +235,4 @@ public class MainController {
             e.printStackTrace();
         }
     }
-
-    public void handle_lapPhieuDat(ActionEvent actionEvent) {
-        try {
-            Parent loader = FXMLLoader.load(getClass().getResource("/com/example/pharmacy_project/gui/lapPhieuDat.fxml"));
-            Stage stage=new Stage();
-            stage.setTitle("Đặt thuốc");
-            stage.setScene(new Scene(loader));
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.showAndWait();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
-    public void handle_addOrder(ActionEvent actionEvent) {
-        try {
-            Parent loader = FXMLLoader.load(getClass().getResource("/com/example/pharmacy_project/gui/lapHoaDon.fxml"));
-            Stage stage=new Stage();
-            stage.setTitle("Tạo hóa đơn");
-            stage.setScene(new Scene(loader));
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.showAndWait();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
 }
