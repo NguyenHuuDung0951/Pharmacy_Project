@@ -20,18 +20,5 @@ import javafx.stage.Stage;
  */
 public class DanhSachKhuyenMaiController {
 
-    public void themKhuyenMai(ActionEvent actionEvent) {
-        try{
-            Parent loader= FXMLLoader.load(getClass().getResource("/com/example/pharmacy_project/gui/ThemKhuyenMai.fxml"));
-            Stage stage=new Stage();
-            stage.setTitle("Thêm Khuyến Mại");
-            stage.setScene(new Scene(loader));
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.showAndWait();
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-    }
+
 }

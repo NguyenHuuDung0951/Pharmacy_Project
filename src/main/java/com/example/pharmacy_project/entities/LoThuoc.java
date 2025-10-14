@@ -29,6 +29,9 @@ public class LoThuoc {
         this.giaNhap = other.giaNhap;
         this.soLuongTon = other.soLuongTon;
     }
+    public LoThuoc(String maLo) {
+        this.maLo = maLo;
+    }
 
     public void setMaLo(String maLo) {
         if(maLo == null){

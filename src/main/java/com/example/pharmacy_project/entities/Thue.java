@@ -23,7 +23,9 @@ public class Thue {
         this.hieuLucTu = other.hieuLucTu;
         this.hetHieuLuc = other.hetHieuLuc;
     }
-
+    public Thue (String maThue) {
+        this.maThue = maThue;
+    }
     public String getMaThue() {
         return maThue;
     }
