@@ -10,13 +10,12 @@ public class Thuoc {
     private String nhaSanXuat;
     private String trangThai;
     private String anhDaiDien;
-    private Thue thue;
     private KeThuoc keThuoc;
     private NhanVien nhanVien;
     private LoThuoc loThuoc;
     private NhomThuoc nhomThuoc;
 
-    public Thuoc(String maThuoc, String tenThuoc, String hamLuong, String dangThuoc, double giaThuoc, String donViTinh, String nhaSanXuat, String trangThai, String anhDaiDien, Thue thue, KeThuoc keThuoc, NhanVien nhanVien, LoThuoc loThuoc, NhomThuoc nhomThuoc) {
+    public Thuoc(String maThuoc, String tenThuoc, String hamLuong, String dangThuoc, double giaThuoc, String donViTinh, String nhaSanXuat, String trangThai, String anhDaiDien, KeThuoc keThuoc, NhanVien nhanVien, LoThuoc loThuoc, NhomThuoc nhomThuoc) {
         this.maThuoc = maThuoc;
         this.tenThuoc = tenThuoc;
         this.hamLuong = hamLuong;
@@ -26,7 +25,6 @@ public class Thuoc {
         this.nhaSanXuat = nhaSanXuat;
         this.trangThai = trangThai;
         this.anhDaiDien = anhDaiDien;
-        this.thue = thue;
         this.keThuoc = keThuoc;
         this.nhanVien = nhanVien;
         this.loThuoc = loThuoc;
@@ -107,14 +105,6 @@ public class Thuoc {
         this.anhDaiDien = anhDaiDien;
     }
 
-    public Thue getThue() {
-        return thue;
-    }
-
-    public void setThue(Thue thue) {
-        this.thue = thue;
-    }
-
     public KeThuoc getKeThuoc() {
         return keThuoc;
     }
@@ -159,7 +149,6 @@ public class Thuoc {
                 ", nhaSanXuat='" + nhaSanXuat + '\'' +
                 ", trangThai='" + trangThai + '\'' +
                 ", anhDaiDien='" + anhDaiDien + '\'' +
-                ", thue=" + thue +
                 ", keThuoc=" + keThuoc +
                 ", nhanVien=" + nhanVien +
                 ", loThuoc=" + loThuoc +

@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmacy_project.controller.DanhSachKhachHangController">
+<AnchorPane prefHeight="600.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmacy_project.controller.DanhSachKhachHangController">
    <children>
       <BorderPane layoutX="14.0" layoutY="7.0" prefHeight="600.0" prefWidth="1366.0">
          <top>
@@ -23,7 +23,6 @@
                      </font>
                   </TextField>
                   <TextField layoutX="321.0" layoutY="17.0" prefHeight="36.0" prefWidth="617.0" promptText="Tìm kiếm " style="-fx-background-radius: 50px;" />
-                  <Button layoutX="1150.0" layoutY="16.0" mnemonicParsing="false" onAction="#taoKhachHang" prefHeight="38.0" prefWidth="163.0" style="-fx-background-radius: 50;" text="Khách Hàng" />
                </children>
             </Pane>
          </top>

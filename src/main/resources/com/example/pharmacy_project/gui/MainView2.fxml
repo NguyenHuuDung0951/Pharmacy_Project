@@ -36,21 +36,21 @@
 <!--                        <Image url="@../../../../image/userprofile.png" />-->
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="93.0" fitWidth="117.0" layoutX="-32.0" layoutY="-19.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="93.0" fitWidth="117.0" layoutX="-32.0" layoutY="-23.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../image/logo_medicine-removebg-preview.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="47.0" layoutY="19.0" text="Bình An" textFill="#176a3a">
+                  <Label layoutX="49.0" layoutY="10.0" text="Bình An" textFill="#176a3a">
                      <font>
                         <Font name="Berlin Sans FB Demi Bold" size="24.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <Pane layoutX="-23.0" layoutY="60.0" prefHeight="40.0" prefWidth="1388.0" style="-fx-background-color: #0070F4;">
+            <Pane layoutX="-23.0" layoutY="61.0" prefHeight="15.0" prefWidth="1388.0" style="-fx-background-color: #0070F4;">
                <children>
-                  <MenuBar fx:id="menuBar" layoutX="22.0" layoutY="-4.0" prefHeight="48.0" prefWidth="1366.0" stylesheets="@../../../../css/menu.css">
+                  <MenuBar fx:id="menuBar" layoutX="22.0" layoutY="-11.0" prefHeight="20.0" prefWidth="1366.0" stylesheets="@../../../../css/menu.css">
                     <menus>
                       <Menu mnemonicParsing="false" text="Hệ Thống">
                            <items>
@@ -59,12 +59,12 @@
                       <Menu mnemonicParsing="false" text="Thuốc">
                         <items>
                           <MenuItem mnemonicParsing="false" onAction="#danhsachthuoc" text="Tra Cứu" />
-                              <MenuItem mnemonicParsing="false" text="Thêm Thuốc" />
+                              <MenuItem mnemonicParsing="false" onAction="#handle_themThuoc" text="Thêm Thuốc" />
                               <SeparatorMenuItem mnemonicParsing="false" />
                               <Menu mnemonicParsing="false" text="Đơn Nhập">
                                 <items>
                                   <MenuItem mnemonicParsing="false" onAction="#handle_dsPhieuNhap" text="Tra Cứu Phiếu Nhập" />
-                                    <MenuItem mnemonicParsing="false" text="Thêm Phiếu Nhập" />
+                                    <MenuItem mnemonicParsing="false" onAction="#handle_lapPhieuNhap" text="Thêm Phiếu Nhập" />
                                     <MenuItem mnemonicParsing="false" text="Tra Cứu NCC" />
                                     <MenuItem mnemonicParsing="false" text="Thêm NCC" />
                                 </items>
@@ -74,7 +74,7 @@
                         <Menu mnemonicParsing="false" text="Nhân Viên">
                             <items>
                                 <MenuItem mnemonicParsing="false" onAction="#list_empl" text="Tra cứu" />
-                                <MenuItem mnemonicParsing="false" text="Thêm Nhân Viên" />
+                                <MenuItem mnemonicParsing="false" onAction="#handle_addEmpl" text="Thêm Nhân Viên" />
 
                                         </items>
                         </Menu>
@@ -105,7 +105,7 @@
                       <Menu mnemonicParsing="false" text="Khách Hàng">
                         <items>
                           <MenuItem mnemonicParsing="false" onAction="#danhSachKhachHang" text="Tra cứu" />
-                              <MenuItem mnemonicParsing="false" text="Thêm Khách Hàng" />
+                              <MenuItem mnemonicParsing="false" onAction="#taoKhachHang" text="Thêm Khách Hàng" />
 
                         </items>
                       </Menu>
@@ -114,8 +114,6 @@
                                 <MenuItem mnemonicParsing="false" text="Doanh Thu" />
                                 <MenuItem mnemonicParsing="false" text="Khách Hàng" />
                                 <MenuItem mnemonicParsing="false" text="Thuốc" />
-                                <MenuItem mnemonicParsing="false" text="Tài Chính" />
-                                <MenuItem mnemonicParsing="false" text="Thuế" />
 
 
                             </items>
@@ -123,19 +121,19 @@
                         <Menu mnemonicParsing="false" text="Khuyến Mãi">
                           <items>
                             <MenuItem mnemonicParsing="false" onAction="#danhSachKhuyenMai" text="Tra Cứu" />
-                              <MenuItem mnemonicParsing="false" text="Thêm Khuyến Mãi" />
+                              <MenuItem mnemonicParsing="false" onAction="#themKhuyenMai" text="Thêm Khuyến Mãi" />
                           </items>
                         </Menu>
                     </menus>
                   </MenuBar>
                </children></Pane>
-            <Button layoutX="683.0" layoutY="20.0" prefHeight="30.0" prefWidth="71.0" styleClass="menu-item" text="Hỗ Trợ" />
-            <Button layoutX="548.0" layoutY="20.0" prefHeight="30.0" prefWidth="73.0" styleClass="menu-item" stylesheets="@../../../../css/style.css" text="Tìm Kiếm" />
+            <Button layoutX="624.0" layoutY="5.0" prefHeight="30.0" prefWidth="71.0" styleClass="menu-item" text="Hỗ Trợ" />
+            <Button layoutX="540.0" layoutY="5.0" prefHeight="30.0" prefWidth="73.0" styleClass="menu-item" stylesheets="@../../../../css/style.css" text="Tìm Kiếm" />
          </children>
       </AnchorPane>
    </top>
    <center>
-      <TableView prefHeight="460.0" prefWidth="1028.0" BorderPane.alignment="CENTER">
+      <TableView prefHeight="632.0" prefWidth="1366.0" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn prefWidth="75.0" text="C1" />
           <TableColumn prefWidth="75.0" text="C2" />

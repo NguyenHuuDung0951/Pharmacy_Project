@@ -40,17 +40,15 @@ public class ThuocDAO {
                 String nhaSanXuat = rs.getString(7);
                 String trangThai = rs.getString(8);
                 String anhDaiDien = rs.getString(9);
-                String maThue = rs.getString(10);
-                String maKe = rs.getString(11);
-                String maNhanVien = rs.getString(12);
-                String maLoThuoc = rs.getString(13);
-                String maNhom = rs.getString(14);
-                Thue thue = new Thue(maThue);
+                String maKe = rs.getString(10);
+                String maNhanVien = rs.getString(11);
+                String maLoThuoc = rs.getString(12);
+                String maNhom = rs.getString(13);
                 KeThuoc keThuoc = new KeThuoc(maKe);
                 NhanVien nv = new NhanVien(maNhanVien);
                 LoThuoc loThuoc = new LoThuoc(maLoThuoc);
                 NhomThuoc nhomThuoc = new NhomThuoc(maNhom);
-                Thuoc thuoc = new Thuoc(maThuoc, tenThuoc, hamLuong, dangThuoc, giaThuoc, donViTinh, nhaSanXuat, trangThai, anhDaiDien, thue, keThuoc, nv, loThuoc, nhomThuoc);
+                Thuoc thuoc = new Thuoc(maThuoc, tenThuoc, hamLuong, dangThuoc, giaThuoc, donViTinh, nhaSanXuat, trangThai, anhDaiDien, keThuoc, nv, loThuoc, nhomThuoc);
                 dsThuoc.add(thuoc);
             }
         } catch (SQLException e) {

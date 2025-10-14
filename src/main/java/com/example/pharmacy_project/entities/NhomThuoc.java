@@ -14,16 +14,24 @@ package com.example.pharmacy_project.entities;
 public class NhomThuoc {
     private String maNhom;
     private String tenNhom;
+    private Thue thue;
 
-    public NhomThuoc(String maNhom, String tenNhom) {
+    public NhomThuoc(String maNhom, String tenNhom, Thue thue) {
         this.maNhom = maNhom;
         this.tenNhom = tenNhom;
+        this.thue = thue;
     }
-
     public NhomThuoc(){}
-
     public NhomThuoc(String maNhom) {
         this.maNhom = maNhom;
+    }
+
+    public Thue getThue() {
+        return thue;
+    }
+
+    public void setThue(Thue thue) {
+        this.thue = thue;
     }
 
     public String getMaNhom() {
@@ -47,6 +55,7 @@ public class NhomThuoc {
         return "NhomThuoc{" +
                 "maNhom='" + maNhom + '\'' +
                 ", tenNhom='" + tenNhom + '\'' +
+                ", thue=" + thue +
                 '}';
     }
 }

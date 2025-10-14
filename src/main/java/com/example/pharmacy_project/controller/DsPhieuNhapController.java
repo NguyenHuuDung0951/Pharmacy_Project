@@ -16,25 +16,5 @@ import javafx.scene.Parent;
  * @created: 10/7/2025 12:14 PM
  */
 public class DsPhieuNhapController {
-    private MainController mainController;
 
-    public void setMainController(MainController mainController) {
-        this.mainController = mainController;
-    }
-
-    public void handle_lapPhieuNhap(ActionEvent actionEvent) {
-        try {
-            FXMLLoader loader = new FXMLLoader(
-                    getClass().getResource("/com/example/pharmacy_project/gui/lapPhieuNhap.fxml")
-            );
-            Parent view = loader.load();
-
-            LapPhieuNhapController child = loader.getController();
-            child.setMainController(mainController);
-
-            mainController.setCenter(view);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }

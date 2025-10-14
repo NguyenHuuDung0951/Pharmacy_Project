@@ -60,16 +60,5 @@ public class DanhSachKhachHangController {
         ObservableList<KhachHang> ds = FXCollections.observableArrayList(khachHangDAO.getAllTbKhachHang());
         tblKhachHang.setItems(ds);
     }
-    public void taoKhachHang(ActionEvent event) {
-        try {
-            Parent loader = FXMLLoader.load(getClass().getResource("/com/example/pharmacy_project/gui/taoKhachHang.fxml"));
-            Stage stage=new Stage();
-            stage.setTitle("Thêm Khách Hàng");
-            stage.setScene(new Scene(loader));
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.showAndWait();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
+
 }

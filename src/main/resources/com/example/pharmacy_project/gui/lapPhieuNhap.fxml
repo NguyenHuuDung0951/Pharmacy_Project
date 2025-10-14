@@ -17,7 +17,7 @@
          <top>
             <Pane prefHeight="67.0" prefWidth="1005.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button layoutX="26.0" layoutY="15.0" mnemonicParsing="false" onAction="#handle_quayLai" style="-fx-background-color: light gray; -fx-border-color: black;" text="Quay lại" />
+                  <Button layoutX="26.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: light gray; -fx-border-color: black;" text="Quay lại" />
                   <Label layoutX="109.0" layoutY="15.0" text="Nhập thuốc">
                      <font>
                         <Font name="System Bold" size="18.0" />
