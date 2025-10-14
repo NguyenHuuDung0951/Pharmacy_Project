@@ -61,8 +61,11 @@
    <center>
       <TableView prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: #DDDDDD; -fx-background-radius: 10px; -fx-border-radius: 10px;" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn prefWidth="139.0" text="Mã phiếu nhập" />
+          <TableColumn prefWidth="207.0" text="Ngày nhập" />
+            <TableColumn prefWidth="224.0" text="Trạng thái" />
+            <TableColumn prefWidth="264.0" text="Nhà cung cấp" />
+            <TableColumn prefWidth="286.0" text="Người tạo" />
         </columns>
          <BorderPane.margin>
             <Insets bottom="10.0" left="10.0" />

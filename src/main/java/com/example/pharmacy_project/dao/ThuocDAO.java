@@ -42,13 +42,11 @@ public class ThuocDAO {
                 String anhDaiDien = rs.getString(9);
                 String maKe = rs.getString(10);
                 String maNhanVien = rs.getString(11);
-                String maLoThuoc = rs.getString(12);
-                String maNhom = rs.getString(13);
+                String maNhom = rs.getString(12);
                 KeThuoc keThuoc = new KeThuoc(maKe);
                 NhanVien nv = new NhanVien(maNhanVien);
-                LoThuoc loThuoc = new LoThuoc(maLoThuoc);
                 NhomThuoc nhomThuoc = new NhomThuoc(maNhom);
-                Thuoc thuoc = new Thuoc(maThuoc, tenThuoc, hamLuong, dangThuoc, giaThuoc, donViTinh, nhaSanXuat, trangThai, anhDaiDien, keThuoc, nv, loThuoc, nhomThuoc);
+                Thuoc thuoc = new Thuoc(maThuoc, tenThuoc, hamLuong, dangThuoc, giaThuoc, donViTinh, nhaSanXuat, trangThai, anhDaiDien, keThuoc, nv, nhomThuoc);
                 dsThuoc.add(thuoc);
             }
         } catch (SQLException e) {
