@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="451.0" prefWidth="1184.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="12.0" layoutY="14.0" prefHeight="53.0" prefWidth="177.0" text="Trả Hàng">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="15.0" layoutY="67.0" prefHeight="21.0" prefWidth="160.0" text="Trạng Thái" />
+      <CheckBox layoutX="22.0" layoutY="98.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="81.0" text="Đã trả" />
+      <CheckBox layoutX="22.0" layoutY="128.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="81.0" text="Đã hủy" />
+      <Label layoutX="15.0" layoutY="235.0" prefHeight="21.0" prefWidth="160.0" text="Người Tạo" />
+      <TextField layoutX="14.0" layoutY="272.0" prefHeight="25.0" prefWidth="219.0" style="-fx-border-radius: 40px; -fx-background-radius: 40px;" />
+      <Label layoutX="15.0" layoutY="308.0" prefHeight="21.0" prefWidth="160.0" text="Người Trả" />
+      <TextField layoutX="14.0" layoutY="340.0" prefHeight="25.0" prefWidth="219.0" style="-fx-border-radius: 40px; -fx-background-radius: 40px;" />
+      <TableView layoutX="262.0" layoutY="67.0" prefHeight="374.0" prefWidth="675.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Mã Đổi Trả" />
+          <TableColumn prefWidth="103.20001220703125" text="Thời Điểm" />
+            <TableColumn prefWidth="78.4000244140625" text="Lý Do" />
+            <TableColumn prefWidth="91.20001220703125" text="Loại Đổi Trả" />
+            <TableColumn prefWidth="102.39996337890625" text="Thời Gian Tạo" />
+            <TableColumn prefWidth="112.79998779296875" text="Mã Nhân Viên" />
+            <TableColumn prefWidth="112.00006103515625" text="Mã Khách Hàng" />
+        </columns>
+      </TableView>
+      <Label layoutX="15.0" layoutY="155.0" prefHeight="21.0" prefWidth="160.0" text="Thời Gian" />
+      <DatePicker layoutX="15.0" layoutY="190.0" prefHeight="25.0" prefWidth="219.0" style="-fx-background-radius: 40px; -fx-border-radius: 40px;" />
+      <TextField layoutX="279.0" layoutY="28.0" prefHeight="25.0" prefWidth="472.0" promptText="Tìm Kiếm" style="-fx-border-radius: 40px; -fx-background-radius: 40px;" />
+      <TextField layoutX="812.0" layoutY="28.0" prefHeight="25.0" prefWidth="96.0" promptText="+ Trả Hàng" />
+   </children>
+</Pane>
