@@ -5,82 +5,81 @@ public class NhanVien {
     private String tenNhanVien;
     private String soDienThoai;
     private String diaChi;
-    private String chucVu;
+    private String anhDaiDien;
+    private ChucVu chucVu;
+    private TaiKhoan taiKhoan;
 
-    public NhanVien(String maNhanVien, String tenNhanVien, String soDienThoai, String diaChi, String chucVu) {
+    public NhanVien(String maNhanVien, String tenNhanVien, String soDienThoai, String diaChi, String anhDaiDien, ChucVu chucVu, TaiKhoan taiKhoan) {
         this.maNhanVien = maNhanVien;
-        setMaNhanVien(maNhanVien);
         this.tenNhanVien = tenNhanVien;
-        setTenNhanVien(tenNhanVien);
         this.soDienThoai = soDienThoai;
-        setSoDienThoai(soDienThoai);
         this.diaChi = diaChi;
-        setDiaChi(diaChi);
+        this.anhDaiDien = anhDaiDien;
         this.chucVu = chucVu;
+        this.taiKhoan = taiKhoan;
     }
-
-    public NhanVien(NhanVien nv) {
-        this.maNhanVien = nv.maNhanVien;
-        this.tenNhanVien = nv.tenNhanVien;
-        this.soDienThoai = nv.soDienThoai;
-        this.diaChi = nv.diaChi;
-        this.chucVu = nv.chucVu;
-    }
-
+    public NhanVien(){}
     public NhanVien(String maNhanVien) {
         this.maNhanVien = maNhanVien;
     }
 
+    public String getTenChucVu() {
+        return chucVu.getTenChucVu();
+    }
     public String getMaNhanVien() {
         return maNhanVien;
+    }
+
+    public void setMaNhanVien(String maNhanVien) {
+        this.maNhanVien = maNhanVien;
     }
 
     public String getTenNhanVien() {
         return tenNhanVien;
     }
 
+    public void setTenNhanVien(String tenNhanVien) {
+        this.tenNhanVien = tenNhanVien;
+    }
+
     public String getSoDienThoai() {
         return soDienThoai;
+    }
+
+    public void setSoDienThoai(String soDienThoai) {
+        this.soDienThoai = soDienThoai;
     }
 
     public String getDiaChi() {
         return diaChi;
     }
 
-    public String getChucVu() {
-        return chucVu;
-    }
-
-    public void setMaNhanVien(String maNhanVien) {
-        if (!maNhanVien.matches("^NV\\d{3}")){
-            throw new IllegalArgumentException("Mã nhân viên bắt đầu bằng NV và theo sau 3 số vd: NV001");
-        }
-        this.maNhanVien = maNhanVien;
-    }
-
-    public void setTenNhanVien(String tenNhanVien) {
-        if (tenNhanVien.isEmpty() || tenNhanVien.length() < 2 || tenNhanVien.length() >50){
-            throw new IllegalArgumentException("Tên Nhân Viên không được rỗng và từ 2-50 ký tự");
-        }
-        this.tenNhanVien = tenNhanVien;
-    }
-
-    public void setSoDienThoai(String soDienThoai) {
-        if (soDienThoai.isEmpty() || soDienThoai.matches("0\\d{9}")){
-            throw new IllegalArgumentException("Số điện thoại bắt đầu 0 và 10 số");
-        }
-        this.soDienThoai = soDienThoai;
-    }
-
     public void setDiaChi(String diaChi) {
-        if (diaChi.isEmpty()){
-            throw new IllegalArgumentException("Địa chỉ không được rỗng");
-        }
         this.diaChi = diaChi;
     }
 
-    public void setChucVu(String chucVu) {
+    public String getAnhDaiDien() {
+        return anhDaiDien;
+    }
+
+    public void setAnhDaiDien(String anhDaiDien) {
+        this.anhDaiDien = anhDaiDien;
+    }
+
+    public ChucVu getChucVu() {
+        return chucVu;
+    }
+
+    public void setChucVu(ChucVu chucVu) {
         this.chucVu = chucVu;
+    }
+
+    public TaiKhoan getTaiKhoan() {
+        return taiKhoan;
+    }
+
+    public void setTaiKhoan(TaiKhoan taiKhoan) {
+        this.taiKhoan = taiKhoan;
     }
 
     @Override
@@ -90,7 +89,9 @@ public class NhanVien {
                 ", tenNhanVien='" + tenNhanVien + '\'' +
                 ", soDienThoai='" + soDienThoai + '\'' +
                 ", diaChi='" + diaChi + '\'' +
-                ", chucVu='" + chucVu + '\'' +
+                ", anhDaiDien='" + anhDaiDien + '\'' +
+                ", chucVu=" + chucVu +
+                ", taiKhoan=" + taiKhoan +
                 '}';
     }
 }

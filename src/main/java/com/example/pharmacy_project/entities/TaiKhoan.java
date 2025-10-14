@@ -26,6 +26,9 @@ public class TaiKhoan {
     public TaiKhoan() {
     }
 
+    public TaiKhoan(String maTaiKhoan) {
+        this.maTaiKhoan = maTaiKhoan;
+    }
     public String getMaTaiKhoan() {
         return maTaiKhoan;
     }

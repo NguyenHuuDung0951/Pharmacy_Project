@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="451.0" prefWidth="1184.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="12.0" layoutY="14.0" prefHeight="53.0" prefWidth="177.0" text="Trả Hàng">
          <font>
@@ -24,7 +23,7 @@
       <TextField layoutX="14.0" layoutY="272.0" prefHeight="25.0" prefWidth="219.0" style="-fx-border-radius: 40px; -fx-background-radius: 40px;" />
       <Label layoutX="15.0" layoutY="308.0" prefHeight="21.0" prefWidth="160.0" text="Người Trả" />
       <TextField layoutX="14.0" layoutY="340.0" prefHeight="25.0" prefWidth="219.0" style="-fx-border-radius: 40px; -fx-background-radius: 40px;" />
-      <TableView layoutX="262.0" layoutY="67.0" prefHeight="374.0" prefWidth="675.0">
+      <TableView layoutX="262.0" layoutY="67.0" prefHeight="533.0" prefWidth="1106.0">
         <columns>
           <TableColumn prefWidth="75.0" text="Mã Đổi Trả" />
           <TableColumn prefWidth="103.20001220703125" text="Thời Điểm" />
@@ -38,6 +37,5 @@
       <Label layoutX="15.0" layoutY="155.0" prefHeight="21.0" prefWidth="160.0" text="Thời Gian" />
       <DatePicker layoutX="15.0" layoutY="190.0" prefHeight="25.0" prefWidth="219.0" style="-fx-background-radius: 40px; -fx-border-radius: 40px;" />
       <TextField layoutX="279.0" layoutY="28.0" prefHeight="25.0" prefWidth="472.0" promptText="Tìm Kiếm" style="-fx-border-radius: 40px; -fx-background-radius: 40px;" />
-      <TextField layoutX="812.0" layoutY="28.0" prefHeight="25.0" prefWidth="96.0" promptText="+ Trả Hàng" />
    </children>
 </Pane>

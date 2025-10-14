@@ -9,28 +9,31 @@ public class LoThuoc {
     private  LocalDate hanSD;
     private double giaNhap;
     private int soLuongTon;
+    private Thuoc thuoc;
 
-    public LoThuoc(String maLo, int soLo, LocalDate ngaySX, LocalDate hanSD, double giaNhap, int soLuongTon) {
+    public LoThuoc(String maLo, int soLo, LocalDate ngaySX, LocalDate hanSD, double giaNhap, int soLuongTon, Thuoc thuoc) {
         this.maLo = maLo;
         this.soLo = soLo;
         this.ngaySX = ngaySX;
         this.hanSD = hanSD;
         this.giaNhap = giaNhap;
         this.soLuongTon = soLuongTon;
+        this.thuoc = thuoc;
     }
 
     public LoThuoc() {
     }
-    public LoThuoc(LoThuoc other) {
-        this.maLo = other.maLo;
-        this.soLo = other.soLo;
-        this.ngaySX = other.ngaySX;
-        this.hanSD = other.hanSD;
-        this.giaNhap = other.giaNhap;
-        this.soLuongTon = other.soLuongTon;
-    }
+
     public LoThuoc(String maLo) {
         this.maLo = maLo;
+    }
+
+    public Thuoc getThuoc() {
+        return thuoc;
+    }
+
+    public void setThuoc(Thuoc thuoc) {
+        this.thuoc = thuoc;
     }
 
     public void setMaLo(String maLo) {
@@ -111,6 +114,7 @@ public class LoThuoc {
                 ", hanSD=" + hanSD +
                 ", giaNhap=" + giaNhap +
                 ", soLuongTon=" + soLuongTon +
+                ", thuoc=" + thuoc +
                 '}';
     }
 }
