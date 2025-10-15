@@ -38,14 +38,14 @@
             </Pane>
          </left>
          <center>
-            <TableView prefHeight="449.0" prefWidth="1182.0" BorderPane.alignment="CENTER">
+            <TableView fx:id="tblKhuyenMai" prefHeight="449.0" prefWidth="1182.0" BorderPane.alignment="CENTER">
               <columns>
-                  <TableColumn prefWidth="205.0" text="Mã Khuyến Mại" />
-                  <TableColumn prefWidth="255.0" text="Tên Chương Trình" />
-                  <TableColumn prefWidth="180.0" text="Ngày Bắt Đầu" />
-                  <TableColumn prefWidth="180.0" text="Ngày Kết Thúc" />
-                  <TableColumn prefWidth="175.0" text="Phần Trăm Giảm Giá" />
-                  <TableColumn prefWidth="225.0" text="Điều Kiện Áp Dụng" />
+                  <TableColumn fx:id="colMa" prefWidth="205.0" text="Mã Khuyến Mại" />
+                  <TableColumn fx:id="colTen" prefWidth="255.0" text="Tên Chương Trình" />
+                  <TableColumn fx:id="colBatDau" prefWidth="180.0" text="Ngày Bắt Đầu" />
+                  <TableColumn fx:id="colKetThuc" prefWidth="180.0" text="Ngày Kết Thúc" />
+                  <TableColumn fx:id="colPhanTram" prefWidth="175.0" text="Phần Trăm Giảm Giá" />
+                  <TableColumn fx:id="colDieuKien" prefWidth="225.0" text="Điều Kiện Áp Dụng" />
               </columns>
             </TableView>
          </center>

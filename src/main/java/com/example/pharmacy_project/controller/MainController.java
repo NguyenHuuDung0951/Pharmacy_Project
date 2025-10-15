@@ -237,7 +237,30 @@ public class MainController {
             e.printStackTrace();
         }
     }
-    public void thongKeKH(ActionEvent actionEvent) {
+  
+    public void handle_dsDoiTra(ActionEvent actionEvent) {
+        try{
+            Parent loader= FXMLLoader.load(getClass().getResource("/com/example/pharmacy_project/gui/traThuoc.fxml"));
+            rootPane.setCenter(loader);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+
+    public void handle_themNCC(ActionEvent actionEvent) {
+        try{
+            Parent loader= FXMLLoader.load(getClass().getResource("/com/example/pharmacy_project/gui/themNhaCungCap.fxml"));
+            rootPane.setCenter(loader);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+      public void thongKeKH(ActionEvent actionEvent) {
         try{
             Parent loader= FXMLLoader.load(getClass().getResource("/com/example/pharmacy_project/gui/admin/ThongKeKhachHang.fxml"));
             rootPane.setCenter(loader);

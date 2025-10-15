@@ -12,10 +12,9 @@ public class Thuoc {
     private String anhDaiDien;
     private KeThuoc keThuoc;
     private NhanVien nhanVien;
-    private LoThuoc loThuoc;
     private NhomThuoc nhomThuoc;
 
-    public Thuoc(String maThuoc, String tenThuoc, String hamLuong, String dangThuoc, double giaThuoc, String donViTinh, String nhaSanXuat, String trangThai, String anhDaiDien, KeThuoc keThuoc, NhanVien nhanVien, LoThuoc loThuoc, NhomThuoc nhomThuoc) {
+    public Thuoc(String maThuoc, String tenThuoc, String hamLuong, String dangThuoc, double giaThuoc, String donViTinh, String nhaSanXuat, String trangThai, String anhDaiDien, KeThuoc keThuoc, NhanVien nhanVien, NhomThuoc nhomThuoc) {
         this.maThuoc = maThuoc;
         this.tenThuoc = tenThuoc;
         this.hamLuong = hamLuong;
@@ -27,7 +26,6 @@ public class Thuoc {
         this.anhDaiDien = anhDaiDien;
         this.keThuoc = keThuoc;
         this.nhanVien = nhanVien;
-        this.loThuoc = loThuoc;
         this.nhomThuoc = nhomThuoc;
     }
 
@@ -121,14 +119,6 @@ public class Thuoc {
         this.nhanVien = nhanVien;
     }
 
-    public LoThuoc getLoThuoc() {
-        return loThuoc;
-    }
-
-    public void setLoThuoc(LoThuoc loThuoc) {
-        this.loThuoc = loThuoc;
-    }
-
     public NhomThuoc getNhomThuoc() {
         return nhomThuoc;
     }
@@ -151,7 +141,6 @@ public class Thuoc {
                 ", anhDaiDien='" + anhDaiDien + '\'' +
                 ", keThuoc=" + keThuoc +
                 ", nhanVien=" + nhanVien +
-                ", loThuoc=" + loThuoc +
                 ", nhomThuoc=" + nhomThuoc +
                 '}';
     }

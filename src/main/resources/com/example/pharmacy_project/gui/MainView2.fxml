@@ -4,6 +4,19 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmacy_project.controller.MainController">
    <top>
@@ -56,7 +69,7 @@
                                   <MenuItem mnemonicParsing="false" onAction="#handle_dsPhieuNhap" text="Tra Cứu Phiếu Nhập" />
                                     <MenuItem mnemonicParsing="false" onAction="#handle_lapPhieuNhap" text="Thêm Phiếu Nhập" />
                                     <MenuItem mnemonicParsing="false" text="Tra Cứu NCC" />
-                                    <MenuItem mnemonicParsing="false" text="Thêm NCC" />
+                                    <MenuItem mnemonicParsing="false" onAction="#handle_themNCC" text="Thêm NCC" />
                                 </items>
                               </Menu>
                         </items>
@@ -86,7 +99,7 @@
                               <SeparatorMenuItem mnemonicParsing="false" />
                               <Menu mnemonicParsing="false" text="Đơn Đổi/Trả">
                                  <items>
-                                    <MenuItem mnemonicParsing="false" text="Tra Cứu Đơn Đổi/Trả" />
+                                    <MenuItem mnemonicParsing="false" onAction="#handle_dsDoiTra" text="Tra Cứu Đơn Đổi/Trả" />
                                     <MenuItem mnemonicParsing="false" text="Lập Đơn Đổi/Trả" />
                                  </items>
                               </Menu>

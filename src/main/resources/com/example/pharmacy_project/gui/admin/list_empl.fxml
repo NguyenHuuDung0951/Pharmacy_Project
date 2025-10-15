@@ -49,11 +49,13 @@
          <children>
             <TextField layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="300.0" promptText="Tìm theo mã, tên nhân viên" style="-fx-border-radius: 20px; -fx-background-radius: 20px;" />
             <Pane layoutX="390.0" layoutY="14.0" prefHeight="25.0" prefWidth="676.0" />
-            <TableView layoutX="15.0" layoutY="50.0" prefHeight="536.0" prefWidth="1051.0" style="-fx-background-color: white; -fx-background-radius: 20px; -fx-border-radius: 20px;" stylesheets="@../../../../../css/style_listempl.css">
+            <TableView fx:id="dsNhanVien" layoutX="15.0" layoutY="50.0" prefHeight="536.0" prefWidth="1051.0" style="-fx-background-color: white; -fx-background-radius: 20px; -fx-border-radius: 20px;" stylesheets="@../../../../../css/style_listempl.css">
               <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
-                  <TableColumn prefWidth="75.0" text="Column X" />
+                <TableColumn fx:id="colMaNV" prefWidth="144.0" text="Mã nhân viên" />
+                <TableColumn fx:id="colTenNV" prefWidth="216.0" text="Tên nhân viên" />
+                  <TableColumn fx:id="colSDT" minWidth="8.0" prefWidth="222.0" text="Số điện thoại" />
+                  <TableColumn fx:id="colDiaChi" prefWidth="268.0" text="Địa chỉ" />
+                  <TableColumn fx:id="colChucVu" prefWidth="200.0" text="Chức vụ" />
               </columns>
             </TableView>
          </children>
