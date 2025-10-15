@@ -66,6 +66,7 @@ public class MainController {
 
 
     }
+    @FXML
     public void closeConnection() {
         ConnectDB.getInstance().disconnect();
         System.out.println("Đã ngắt kết nối CSDL");
@@ -77,7 +78,7 @@ public class MainController {
     public void setCenter(Node node) {
         rootPane.setCenter(node);
     }
-
+    @FXML
     public void list_empl(ActionEvent actionEvent) {
         try {
             Parent content = FXMLLoader.load(
@@ -88,7 +89,7 @@ public class MainController {
             e.printStackTrace();
         }
     }
-
+    @FXML
     public void overview(ActionEvent actionEvent) {
         try {
             Parent content = FXMLLoader.load(
@@ -99,8 +100,9 @@ public class MainController {
             e.printStackTrace();
         }
     }
-
+    @FXML
     public void danhSachKhachHang(ActionEvent actionEvent) {
+        System.out.println(">>> Click: danhSachKhachHang");
         try {
             Parent content = FXMLLoader.load(
                     getClass().getResource("/com/example/pharmacy_project/gui/DanhSachKhachHang.fxml")
@@ -235,7 +237,7 @@ public class MainController {
             e.printStackTrace();
         }
     }
-
+  
     public void handle_dsDoiTra(ActionEvent actionEvent) {
         try{
             Parent loader= FXMLLoader.load(getClass().getResource("/com/example/pharmacy_project/gui/traThuoc.fxml"));
@@ -247,9 +249,20 @@ public class MainController {
         }
     }
 
+
     public void handle_themNCC(ActionEvent actionEvent) {
         try{
             Parent loader= FXMLLoader.load(getClass().getResource("/com/example/pharmacy_project/gui/themNhaCungCap.fxml"));
+            rootPane.setCenter(loader);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+      public void thongKeKH(ActionEvent actionEvent) {
+        try{
+            Parent loader= FXMLLoader.load(getClass().getResource("/com/example/pharmacy_project/gui/admin/ThongKeKhachHang.fxml"));
             rootPane.setCenter(loader);
         }
         catch (Exception e)
