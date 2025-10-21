@@ -1,6 +1,8 @@
 package com.example.pharmacy_project.dao;
 
 import com.example.pharmacy_project.connectDB.ConnectDB;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import org.mindrot.jbcrypt.BCrypt;
 
 import java.sql.Connection;
@@ -9,6 +11,24 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class taiKhoanDao {
+    // Hàm lấy danh sách các tài khoản
+    public ObservableList<String> getAllTenDangNhap(){
+        ObservableList<String> list = FXCollections.observableArrayList();
+        String sql = "select tenDangNhap from TaiKhoan";
+        try(Connection con = ConnectDB.getConnection();
+            PreparedStatement stmt = con.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery()){
+
+            while (rs.next()){
+                list.add(rs.getString("tenDangNhap"));
+            }
+
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return list;
+    }
 
     // Hàm kiểm tra đăng nhập
     public boolean validateLogin(String username, String password) {

@@ -63,10 +63,15 @@
                       </Menu>
                         <Menu mnemonicParsing="false" text="Nhân Viên">
                             <items>
-                                <MenuItem mnemonicParsing="false" onAction="#list_empl" text="Tra cứu" />
-                                <MenuItem mnemonicParsing="false" onAction="#handle_addEmpl" text="Thêm Nhân Viên" />
+                                <MenuItem mnemonicParsing="false" onAction="#list_empl" text="Tìm kiếm nhân viên" />
+                                <MenuItem mnemonicParsing="false" onAction="#handle_addEmpl" text="Thêm nhân viên" />
+                                <MenuItem mnemonicParsing="false"  text="Cập nhật thông tin nhân viên" />
+                                <MenuItem mnemonicParsing="false"  text="Xóa nhân viên" />
+                                <MenuItem mnemonicParsing="false"  text="Xem chi tiết nhân viên" />
 
-                                        </items>
+
+
+                            </items>
                         </Menu>
                         <Menu mnemonicParsing="false" text="Đơn Hàng">
                           <items>
@@ -78,7 +83,7 @@
                               </Menu>
                               <SeparatorMenuItem mnemonicParsing="false" />
                               <Menu mnemonicParsing="false" text="Hóa Đơn">
-                                <items>
+                                    <items>
                                   <MenuItem mnemonicParsing="false" onAction="#handle_listOrder" text="Tra Cứu Hóa Đơn" />
                                     <MenuItem mnemonicParsing="false" onAction="#handle_addOrder" text="Lập Hóa Đơn" />
                                 </items>

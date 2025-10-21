@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmacy_project.controller.ListEmplController">
+<BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmacy_project.controller.DanhSachNhanVienController">
    <children>
       <Pane prefHeight="460.0" prefWidth="300.0">
          <children>
@@ -40,23 +35,38 @@
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <ComboBox layoutX="33.0" layoutY="177.0" prefWidth="150.0" promptText="Chọn chức danh" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 10px;" />
+                  <ComboBox fx:id="cmbChucDanh" layoutX="33.0" layoutY="177.0" prefWidth="150.0" promptText="Chọn chức danh" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 10px;" />
                </children>
             </Pane>
          </children>
       </Pane>
-      <Pane layoutX="300.0" prefHeight="460.0" prefWidth="1068.0">
+      <Pane layoutX="300.0" prefHeight="600.0" prefWidth="1068.0">
          <children>
-            <TextField layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="300.0" promptText="Tìm theo mã, tên nhân viên" style="-fx-border-radius: 20px; -fx-background-radius: 20px;" />
-            <Pane layoutX="390.0" layoutY="14.0" prefHeight="25.0" prefWidth="676.0" />
-            <TableView layoutX="15.0" layoutY="50.0" prefHeight="536.0" prefWidth="1051.0" style="-fx-background-color: white; -fx-background-radius: 20px; -fx-border-radius: 20px;" stylesheets="@../../../../../css/style_listempl.css">
+            <TextField fx:id="txtSearch" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="300.0" promptText="Tìm theo mã, tên nhân viên" style="-fx-border-radius: 20px; -fx-background-radius: 20px;" />
+            <Pane layoutX="390.0" layoutY="14.0" prefHeight="25.0" prefWidth="676.0">
+               <children>
+                   <Button
+                           layoutX="296.0" layoutY="-5.0"
+                           prefHeight="30.0" prefWidth="110.0"
+                           style="-fx-background-color: yellow;"
+                           styleClass="menu-item"
+                           stylesheets="@../../../../../css/style.css"
+                           onAction="#handle_addEmpl"
+                           text="Thêm Nhân Viên" />
+                  <Button layoutX="416.0" layoutY="-5.0" prefHeight="30.0" prefWidth="94.0" style="-fx-background-color: red;" styleClass="menu-item" stylesheets="@../../../../../css/style.css" text="Xóa Nhân Viên" />
+                  <Button layoutX="518.0" layoutY="-5.0" prefHeight="30.0" prefWidth="94.0" style="-fx-background-color: green;" styleClass="menu-item" stylesheets="@../../../../../css/style.css" text="Sửa Nhân Viên" />
+
+               </children></Pane>
+            <TableView fx:id="tblNhanVien" layoutX="15.0" layoutY="50.0" prefHeight="536.0" prefWidth="1051.0" style="-fx-background-color: white; -fx-background-radius: 20px; -fx-border-radius: 20px;" stylesheets="@../../../../../css/style_listempl.css">
               <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
-                  <TableColumn prefWidth="75.0" text="Column X" />
+                <TableColumn fx:id="celMaNv" prefWidth="147.19998168945312" text="Mã Nhân Viên" />
+                <TableColumn fx:id="cellTenNv" prefWidth="227.20001220703125" text="Tên Nhân Viên" />
+                  <TableColumn fx:id="cellSdt" prefWidth="156.800048828125" text="Số Điện Thoại" />
+                  <TableColumn fx:id="cellDiaChi" prefWidth="345.59991455078125" text="Địa Chỉ" />
+                  <TableColumn fx:id="cellAnhDaiDien" minWidth="0.0" prefWidth="174.4000244140625" text="Ảnh Đại Diện" />
               </columns>
             </TableView>
          </children>
       </Pane>
    </children>
-</Pane>
+</BorderPane>

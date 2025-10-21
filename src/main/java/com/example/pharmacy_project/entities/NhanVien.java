@@ -5,18 +5,18 @@ public class NhanVien {
     private String tenNhanVien;
     private String soDienThoai;
     private String diaChi;
-    private String chucVu;
+    private String anhDaiDien;
 
-    public NhanVien(String maNhanVien, String tenNhanVien, String soDienThoai, String diaChi, String chucVu) {
+    public NhanVien(String maNhanVien, String tenNhanVien, String soDienThoai, String diaChi, String anhDaiDien) {
         this.maNhanVien = maNhanVien;
-        setMaNhanVien(maNhanVien);
+//        setMaNhanVien(maNhanVien);
         this.tenNhanVien = tenNhanVien;
-        setTenNhanVien(tenNhanVien);
+//        setTenNhanVien(tenNhanVien);
         this.soDienThoai = soDienThoai;
-        setSoDienThoai(soDienThoai);
+        //setSoDienThoai(soDienThoai);
         this.diaChi = diaChi;
-        setDiaChi(diaChi);
-        this.chucVu = chucVu;
+      //  setDiaChi(diaChi);
+        this.anhDaiDien = anhDaiDien;
     }
 
     public NhanVien(NhanVien nv) {
@@ -24,9 +24,11 @@ public class NhanVien {
         this.tenNhanVien = nv.tenNhanVien;
         this.soDienThoai = nv.soDienThoai;
         this.diaChi = nv.diaChi;
-        this.chucVu = nv.chucVu;
+        this.anhDaiDien = nv.anhDaiDien;
     }
-
+    public NhanVien(){
+        new NhanVien("","","","","");
+    }
     public NhanVien(String maNhanVien) {
         this.maNhanVien = maNhanVien;
     }
@@ -47,8 +49,8 @@ public class NhanVien {
         return diaChi;
     }
 
-    public String getChucVu() {
-        return chucVu;
+    public String getAnhDaiDien() {
+        return anhDaiDien;
     }
 
     public void setMaNhanVien(String maNhanVien) {
@@ -66,9 +68,9 @@ public class NhanVien {
     }
 
     public void setSoDienThoai(String soDienThoai) {
-        if (soDienThoai.isEmpty() || soDienThoai.matches("0\\d{9}")){
-            throw new IllegalArgumentException("Số điện thoại bắt đầu 0 và 10 số");
-        }
+//        if (soDienThoai.isEmpty() || soDienThoai.matches("0\\d{9}")){
+//            throw new IllegalArgumentException("Số điện thoại bắt đầu 0 và 10 số");
+//        }
         this.soDienThoai = soDienThoai;
     }
 
@@ -79,8 +81,8 @@ public class NhanVien {
         this.diaChi = diaChi;
     }
 
-    public void setChucVu(String chucVu) {
-        this.chucVu = chucVu;
+    public void setAnhDaiDien(String anhDaiDien) {
+        this.anhDaiDien = anhDaiDien;
     }
 
     @Override
@@ -90,7 +92,7 @@ public class NhanVien {
                 ", tenNhanVien='" + tenNhanVien + '\'' +
                 ", soDienThoai='" + soDienThoai + '\'' +
                 ", diaChi='" + diaChi + '\'' +
-                ", chucVu='" + chucVu + '\'' +
+                ", anhDaiDien='" + anhDaiDien + '\'' +
                 '}';
     }
 }

@@ -219,6 +219,7 @@ public class MainController {
             throw new RuntimeException(e);
         }
     }
+
     public void taoKhachHang(ActionEvent event) {
         try {
             Parent loader = FXMLLoader.load(getClass().getResource("/com/example/pharmacy_project/gui/taoKhachHang.fxml"));

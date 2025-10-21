@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="600.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmacy_project.controller.DsDonDatController">
+<BorderPane prefHeight="600.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmacy_project.controller.DsDonDatController">
    <top>
       <Pane prefHeight="62.0" prefWidth="1366.0" BorderPane.alignment="CENTER">
          <children>
@@ -22,6 +15,9 @@
                </font>
             </Label>
             <TextField layoutX="252.0" layoutY="14.0" prefHeight="25.0" prefWidth="276.0" promptText="Theo mã phiếu đặt" style="-fx-background-color: white; -fx-border-color: #DDDDDD; -fx-background-radius: 10px; -fx-border-radius: 10px;" />
+            <Button layoutX="982.0" layoutY="16.0" prefHeight="30.0" prefWidth="73.0" styleClass="menu-item" stylesheets="@../../../../css/style.css" text="Đặt Hàng" />
+            <Button layoutX="1082.0" layoutY="16.0" prefHeight="30.0" prefWidth="73.0" styleClass="menu-item" stylesheets="@../../../../css/style.css" text="Xuất File" />
+            <Button layoutX="1178.0" layoutY="16.0" prefHeight="30.0" prefWidth="73.0" styleClass="menu-item" stylesheets="@../../../../css/style.css" text="Tùy Chỉnh" />
          </children>
       </Pane>
    </top>
