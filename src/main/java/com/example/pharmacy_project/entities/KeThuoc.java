@@ -1,16 +1,18 @@
 package com.example.pharmacy_project.entities;
 
+import java.util.Objects;
+
 public class KeThuoc {
     private String maKe;
     private String viTri;
     private String loaiKe;
-    private String sucChua;
+    private int sucChua;
 
     public KeThuoc(String maKe) {
         this.maKe = maKe;
     }
 
-    public KeThuoc(String maKe, String viTri, String loaiKe, String sucChua) {
+    public KeThuoc(String maKe, String viTri, String loaiKe, int sucChua) {
         this.maKe = maKe;
         setMaKe(maKe);
         this.viTri = viTri;
@@ -38,7 +40,7 @@ public class KeThuoc {
         return loaiKe;
     }
 
-    public String getSucChua() {
+    public int getSucChua() {
         return sucChua;
     }
 
@@ -61,7 +63,7 @@ public class KeThuoc {
         this.loaiKe = loaiKe;
     }
 
-    public void setSucChua(String sucChua) {
+    public void setSucChua(int sucChua) {
         this.sucChua = sucChua;
     }
 
@@ -73,5 +75,18 @@ public class KeThuoc {
                 ", loaiKe='" + loaiKe + '\'' +
                 ", sucChua='" + sucChua + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        KeThuoc keThuoc = (KeThuoc) o;
+        return Objects.equals(maKe, keThuoc.maKe);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(maKe);
     }
 }

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -11,33 +13,60 @@
 <AnchorPane prefHeight="608.0" prefWidth="1370.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmacy_project.controller.DanhSachThuocController">
    <children>
       <BorderPane prefHeight="608.0" prefWidth="1366.0">
-         <top>
-            <Pane prefHeight="100.0" prefWidth="942.0" BorderPane.alignment="CENTER">
-               <children>
-                  <TextField alignment="CENTER" editable="false" layoutX="14.0" layoutY="19.0" style="-fx-background-color: f5f5f5;" text="Danh Sách Thuốc">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </TextField>
-                  <TextField layoutX="340.0" layoutY="21.0" prefHeight="36.0" prefWidth="788.0" promptText="Tìm Kiếm" style="-fx-background-radius: 50;" />
-               </children>
-            </Pane>
-         </top>
          <center>
             <TableView fx:id="tblThuoc" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
               <columns>
-                <TableColumn fx:id="colMaThuoc" prefWidth="75.0" text="Mã Thuốc" />
-                <TableColumn fx:id="colTenThuoc" prefWidth="225.0" text="Tên Thuốc" />
-                  <TableColumn fx:id="colHamLuong" prefWidth="175.0" text="Hàm Lượng" />
-                  <TableColumn fx:id="colDangThuoc" prefWidth="205.0" text="Dạng Thuốc" />
-                  <TableColumn fx:id="colGiaThuoc" prefWidth="155.0" text="Giá Thuốc" />
-                  <TableColumn fx:id="colDonViTinh" prefWidth="125.0" text="Đơn Vị Tính" />
-                  <TableColumn fx:id="colNhaSanXuat" prefWidth="135.0" text="Nhà Sản Xuất" />
-                  <TableColumn fx:id="colTrangThai" prefWidth="150.0" text="Trạng Thái" />
-                  <TableColumn fx:id="colHinhAnh" prefWidth="136.0" text="Hình Ảnh" />
+                <TableColumn fx:id="colMaThuoc" prefWidth="129.0" text="Mã Thuốc" />
+                <TableColumn fx:id="colTenThuoc" prefWidth="157.0" text="Tên Thuốc" />
+                  <TableColumn fx:id="colHamLuong" prefWidth="189.0" text="Hàm Lượng" />
+                  <TableColumn fx:id="colDangThuoc" prefWidth="195.0" text="Dạng Thuốc" />
+                  <TableColumn fx:id="colGiaThuoc" prefWidth="184.0" text="Giá Thuốc" />
+                  <TableColumn fx:id="colDonViTinh" prefWidth="167.0" text="Đơn Vị Tính" />
+                  <TableColumn fx:id="colNhaSanXuat" prefWidth="169.0" text="Nhà Sản Xuất" />
+                  <TableColumn fx:id="colHinhAnh" prefWidth="175.0" text="Hình Ảnh" />
               </columns>
             </TableView>
          </center>
+         <top>
+            <BorderPane prefHeight="96.0" prefWidth="1366.0" BorderPane.alignment="CENTER">
+               <left>
+                  <Pane prefHeight="96.0" prefWidth="1069.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <TextField alignment="CENTER" editable="false" layoutX="14.0" layoutY="8.0" style="-fx-background-color: f5f5f5;" text="Danh Sách Thuốc">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <TextField layoutX="238.0" layoutY="10.0" prefHeight="36.0" prefWidth="689.0" promptText="Tìm theo mã hoặc tên" style="-fx-background-radius: 50;" />
+                        <ComboBox layoutX="51.0" layoutY="56.0" prefHeight="27.0" prefWidth="268.0" promptText="Chọn dạng thuốc" style="-fx-background-color: white; -fx-border-color: #DDDDDD; -fx-background-radius: 10px; -fx-border-radius: 10px;" />
+                        <ComboBox layoutX="359.0" layoutY="56.0" prefHeight="27.0" prefWidth="263.0" promptText="Chọn đơn vị tính" style="-fx-background-color: white; -fx-border-color: #DDDDDD; -fx-background-radius: 10px; -fx-border-radius: 10px;" />
+                        <ComboBox layoutX="663.0" layoutY="56.0" prefHeight="27.0" prefWidth="264.0" promptText="Chọn nhà sản xuất" style="-fx-background-color: white; -fx-border-color: #DDDDDD; -fx-background-radius: 10px; -fx-border-radius: 10px;" />
+                        <Button layoutX="972.0" layoutY="31.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="72.0" style="-fx-background-color: #0070F4; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Lọc" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </Pane>
+               </left>
+               <center>
+                  <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button fx:id="btnXoa" layoutX="41.0" layoutY="29.0" mnemonicParsing="false" onAction="#handle_xoa" prefHeight="35.0" prefWidth="77.0" style="-fx-background-color: #F44336; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Xóa" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnCapNhat" layoutX="164.0" layoutY="29.0" mnemonicParsing="false" onAction="#handle_capNhat" style="-fx-background-color: #00b63e; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Cập nhật" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </Pane>
+               </center>
+            </BorderPane>
+         </top>
       </BorderPane>
    </children>
 </AnchorPane>

@@ -257,4 +257,15 @@ public class MainController {
             e.printStackTrace();
         }
     }
+
+    public void thongKeKH(ActionEvent actionEvent) {
+        try{
+            Parent loader= FXMLLoader.load(getClass().getResource("/com/example/pharmacy_project/gui/admin/ThongKeKhachHang.fxml"));
+            rootPane.setCenter(loader);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
 }

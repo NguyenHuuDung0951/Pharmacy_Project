@@ -5,6 +5,8 @@
  */
 package com.example.pharmacy_project.entities;
 
+import java.util.Objects;
+
 /*
  * @description:
  * @author: Khang, Le Hoang
@@ -57,5 +59,18 @@ public class NhomThuoc {
                 ", tenNhom='" + tenNhom + '\'' +
                 ", thue=" + thue +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        NhomThuoc nhomThuoc = (NhomThuoc) o;
+        return Objects.equals(maNhom, nhomThuoc.maNhom);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(maNhom);
     }
 }
