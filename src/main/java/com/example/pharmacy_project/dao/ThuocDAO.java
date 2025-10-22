@@ -8,10 +8,7 @@ package com.example.pharmacy_project.dao;
 import com.example.pharmacy_project.connectDB.ConnectDB;
 import com.example.pharmacy_project.entities.*;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 
 /*
@@ -27,7 +24,7 @@ public class ThuocDAO {
         try {
             ConnectDB.getInstance();
             Connection con = ConnectDB.getConnection();
-            String sql = "Select * from Thuoc";
+            String sql = "Select * from Thuoc where trangThai = N'Đang Kinh Doanh'";
             Statement statement = con.createStatement();
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) {
@@ -53,5 +50,60 @@ public class ThuocDAO {
             throw new RuntimeException(e);
         }
         return dsThuoc;
+    }
+    public boolean themThuoc(Thuoc thuoc) {
+        String sql = "INSERT INTO Thuoc (maThuoc, tenThuoc, hamLuong, dangThuoc, giaThuoc, donViTinh, nhaSanXuat, anhDaiDien, maKe, maNhanVien, maNhom) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        try {
+            Connection con = ConnectDB.getConnection();
+            PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.setString(1, thuoc.getMaThuoc());
+            stmt.setString(2, thuoc.getTenThuoc());
+            stmt.setString(3, thuoc.getHamLuong());
+            stmt.setString(4, thuoc.getDangThuoc());
+            stmt.setDouble(5, thuoc.getGiaThuoc());
+            stmt.setString(6, thuoc.getDonViTinh());
+            stmt.setString(7, thuoc.getNhaSanXuat());
+            stmt.setString(8, thuoc.getAnhDaiDien());
+            stmt.setString(9, thuoc.getKeThuoc().getMaKe());
+            stmt.setString(10, thuoc.getNhanVien().getMaNhanVien());
+            stmt.setString(11, thuoc.getNhomThuoc().getMaNhom());
+            return stmt.executeUpdate() > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    public boolean capNhatThuoc(Thuoc thuoc) {
+        String sql = "Update Thuoc set tenThuoc = ?, hamLuong = ?, dangThuoc = ?, giaThuoc = ?, donViTinh = ?, nhaSanXuat = ?, anhDaiDien = ?, maKe = ?, maNhanVien = ?, maNhom = ? where maThuoc = ?";
+        try {
+            ConnectDB.getInstance();
+            Connection con = ConnectDB.getConnection();
+            PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.setString(1, thuoc.getTenThuoc());
+            stmt.setString(2, thuoc.getHamLuong());
+            stmt.setString(3, thuoc.getDangThuoc());
+            stmt.setDouble(4, thuoc.getGiaThuoc());
+            stmt.setString(5, thuoc.getDonViTinh());
+            stmt.setString(6, thuoc.getNhaSanXuat());
+            stmt.setString(7, thuoc.getAnhDaiDien());
+            stmt.setString(8, thuoc.getKeThuoc().getMaKe());
+            stmt.setString(9, thuoc.getNhanVien().getMaNhanVien());
+            stmt.setString(10, thuoc.getNhomThuoc().getMaNhom());
+            stmt.setString(11, thuoc.getMaThuoc());
+            return stmt.executeUpdate() > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    public boolean xoaThuoc (String maThuoc) throws SQLException {
+        ConnectDB.getInstance();
+        Connection con = ConnectDB.getConnection();
+        String sql = "Update Thuoc set trangThai = N'Ngừng Kinh Doanh' where maThuoc = ?";
+        PreparedStatement stmt = con.prepareStatement(sql);
+        stmt.setString(1, maThuoc);
+        return stmt.executeUpdate() > 0;
     }
 }

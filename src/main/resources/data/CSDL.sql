@@ -14,7 +14,7 @@ create table TaiKhoan
 	tenDangNhap varchar(20) not null,
 	matKhau varchar(150) not null,
 	vaiTro nvarchar(40) not null,
-	trangThai nvarchar(20) check ( trangThai in(N'Kích Hoạt',N'Khóa')),
+	trangThai nvarchar(20) check ( trangThai in(N'Kích Hoạt',N'Khóa')) default N'Kích Hoạt'
 )
 
 create table NhanVien
@@ -26,8 +26,8 @@ create table NhanVien
 	anhDaiDien varchar(100) not null,
 	maChucVu varchar(20) not null,
 	maTaiKhoan varchar(20) not null,
-	foreign key (maChucVu) references ChucVu(maChucVu),
-	foreign key (maTaiKhoan) references TaiKhoan(maTaiKhoan)
+	foreign key (maChucVu) references ChucVu(maChucVu) on delete cascade on update cascade,
+	foreign key (maTaiKhoan) references TaiKhoan(maTaiKhoan) on delete cascade on update cascade
 )
 create table NhaCungCap
 (
@@ -43,8 +43,8 @@ create table PhieuNhap
 	trangThai nvarchar(20) not null check (trangThai in (N'Phiếu tạm', N'Đã nhập hàng', N'Đã hủy')),
 	maNhaCungCap varchar(20) not null,
 	maNhanVien varchar(20) not null,
-	foreign key (maNhanVien) references NhanVien(maNhanVien),
-	foreign key (maNhaCungCap) references NhaCungCap(maNhaCungCap)
+	foreign key (maNhanVien) references NhanVien(maNhanVien) on delete cascade on update cascade,
+	foreign key (maNhaCungCap) references NhaCungCap(maNhaCungCap) on delete cascade on update cascade
 )
 
 create table KhachHang
@@ -56,7 +56,8 @@ create table KhachHang
 	gioiTinh bit not null,
 	thoiGianTao date not null,
 	maNhanVien varchar(20) not null,
-	foreign key (maNhanVien) references NhanVien(maNhanVien)
+	trangThai bit default 1,
+	foreign key (maNhanVien) references NhanVien(maNhanVien) on delete cascade on update cascade
 )
 create table PhieuDoiTra
 (
@@ -68,7 +69,7 @@ create table PhieuDoiTra
 	maNhanVien varchar(20),
 	maKhachHang varchar(20),
 	foreign key(maNhanVien) references NhanVien(maNhanVien),
-	foreign key (maKhachHang) references KhachHang(maKhachHang)
+	foreign key (maKhachHang) references KhachHang(maKhachHang) on delete cascade on update cascade
 )
 create table KhuyenMai
 (
@@ -100,7 +101,7 @@ create table NhomThuoc
 	maNhom varchar(20) primary key,
 	tenNhom nvarchar(100) not null,
 	maThue varchar(20) not null,
-	foreign key (maThue) references Thue(maThue)
+	foreign key (maThue) references Thue(maThue) on delete cascade on update cascade
 )
 create table Thuoc
 (
@@ -111,14 +112,14 @@ create table Thuoc
 	giaThuoc float not null,
 	donViTinh varchar(20) not null,
 	nhaSanXuat nvarchar(50) not null,
-	trangThai nvarchar(20) check (trangThai in (N'Đang Kinh Doanh',N'Ngừng Kinh Doanh')),
+	trangThai nvarchar(20) check (trangThai in (N'Đang Kinh Doanh',N'Ngừng Kinh Doanh')) default N'Đang Kinh Doanh',
 	anhDaiDien varchar(100) not null,
 	maKe varchar(20) not null,
 	maNhanVien varchar(20) not null,
 	maNhom varchar(20) not null,
-	foreign key (maNhom) references NhomThuoc(maNhom),
-	foreign key(maKe) references KeThuoc(maKe),
-	foreign key(maNhanVien) references NhanVien(maNhanVien)
+	foreign key (maNhom) references NhomThuoc(maNhom) on delete cascade on update cascade,
+	foreign key(maKe) references KeThuoc(maKe) on delete cascade on update cascade,
+	foreign key(maNhanVien) references NhanVien(maNhanVien) on delete cascade on update cascade
 )
 create table LoThuoc
 (
@@ -129,7 +130,7 @@ create table LoThuoc
 	giaNhap float not null,
 	soLuongTon int not null,
 	maThuoc varchar(20) not null,
-	foreign key (maThuoc) references Thuoc(maThuoc)
+	foreign key (maThuoc) references Thuoc(maThuoc) on delete cascade on update cascade
 )
 create table ChiTietPhieuNhap 
 (
@@ -139,7 +140,7 @@ create table ChiTietPhieuNhap
 	maLoThuoc varchar(20),
 	primary key (maPhieuNhap, maLoThuoc),
 	foreign key (maPhieuNhap) references PhieuNhap(maPhieuNhap),
-	foreign key (maLoThuoc) references LoThuoc(maLoThuoc)
+	foreign key (maLoThuoc) references LoThuoc(maLoThuoc) on delete cascade on update cascade
 )
 create table ChiTietDoiTra
 (
@@ -148,7 +149,7 @@ create table ChiTietDoiTra
 	maThuoc varchar(20),
 	primary key (maDoiTra, maThuoc),
 	foreign key(maDoiTra) references PhieuDoiTra(maDoiTra),
-	foreign key(maThuoc) references Thuoc(maThuoc)
+	foreign key(maThuoc) references Thuoc(maThuoc) on delete cascade on update cascade
 )
 create table HoaDon
 (
@@ -161,7 +162,7 @@ create table HoaDon
 	maKhuyenMai varchar(20) not null,
 	foreign key (maKhuyenMai) references KhuyenMai(maKhuyenMai),
 	foreign key(maKhachHang) references KhachHang(maKhachHang),
-	foreign key(maNhanVien) references NhanVien(maNhanVien)
+	foreign key(maNhanVien) references NhanVien(maNhanVien) on delete cascade on update cascade
 )
 create table ChiTietHoaDon
 (
@@ -170,18 +171,18 @@ create table ChiTietHoaDon
 	maThuoc varchar(20) not null,
 	primary key (maHoaDon, maThuoc),
 	foreign key(maHoaDon) references HoaDon(maHoaDon),
-	foreign key(maThuoc) references Thuoc(maThuoc)
+	foreign key(maThuoc) references Thuoc(maThuoc) on delete cascade on update cascade
 )
 create table PhieuDat
 (
 	maPhieuDat varchar(20) primary key,
 	thoiGianDat date not null,
-	trangThai nvarchar(20) check (trangThai in (N'Đã đặt', N'Đã nhận', N'Đã hủy')),
+	trangThai nvarchar(20) check (trangThai in (N'Đã đặt', N'Đã nhận', N'Đã hủy')) default N'Đã đặt',
 	ghiChu nvarchar(20),
 	maKhachHang varchar(20) not null,
 	maNhanVien varchar(20) not null,
 	foreign key (maNhanVien) references NhanVien(maNhanVien),
-	foreign key (maKhachHang) references KhachHang(maKhachHang),
+	foreign key (maKhachHang) references KhachHang(maKhachHang) on delete cascade on update cascade
 )
 create table ChiTietPhieuDat
 (
@@ -191,12 +192,8 @@ create table ChiTietPhieuDat
 	maThuoc varchar(20) not null,
 	primary key (maPhieuDat, maThuoc),
 	foreign key (maPhieuDat) references PhieuDat(maPhieuDat),
-	foreign key (maThuoc) references Thuoc(maThuoc)
+	foreign key (maThuoc) references Thuoc(maThuoc) on delete cascade on update cascade
 )
-INSERT INTO KhachHang values 
-('KH2', '0917774020', 'Lê Hoàng Khang', 'Vip', 0, '2025-02-26', 'NV001'),
-('KH3', '0918011626', 'Nguyễn Văn Sỹ', 'Thường', 1, '2025-09-10', 'NV001');
-
 insert into ChucVu values
 ('CV001',N'Quản lý'),
 ('CV002',N'Nhân viên')
@@ -204,10 +201,6 @@ insert into TaiKhoan values
 ('TK001', 'admin', '123', 'admin', N'Kích Hoạt'),
 ('TK002', 'user1', '123', 'user', N'Kích Hoạt'),
 ('TK003', 'user2', '123', 'user', N'Kích Hoạt')
-insert into NhaCungCap values
-('NCC001',N'Long Châu','0913343123','tphcm'),
-('NCC002',N'Minh Châu','0913343456','tphcm'),
-('NCC003',N'Pharmacity','0911343123','tphcm')
 insert into NhanVien values
 ('NV001','Nguyễn Hữu Dũng','0935765186',N'Gò vấp, tphcm','asdf','CV001','TK001'),
 ('NV002','Nguyễn Văn Sỹ','0372145686','Q12, tphcm','asdf','CV001','TK002'),
@@ -263,15 +256,61 @@ insert into NhanVien values
 ('NV048', N'Ngô Trúc Linh',        '0900000048', N'Q. Bình Thạnh, TP.HCM', 'avatars/nv048.jpg', 'CV002', 'TK003'),
 ('NV049', N'Đặng Anh Khoa',        '0900000049', N'Q.1, TP.HCM',           'avatars/nv049.jpg', 'CV001', 'TK001'),
 ('NV050', N'Phan Thảo Nhi',        '0900000050', N'Q.3, TP.HCM',           'avatars/nv050.jpg', 'CV002', 'TK002');
-INSERT INTO LoThuoc VALUES
-('LT01', 'L001', '2025-01-01', '2027-01-01', 10000, 500, N'Lô A'),
-('LT02', 'L002', '2025-05-01', '2027-05-01', 12000, 300, N'Lô B');
-insert into PhieuNhap values
-('PN001','2025-8-10', N'Đã nhập','NCC001','NV001'),
-('PN002','2025-8-10', N'Đã nhập','NCC002','NV002')
-insert into ChiTietPhieuNhap values
-(50,'132000','PN001','LT01'),
-(80,'142000','PN002','LT02')
+INSERT INTO KhachHang (maKhachHang, soDienThoai, tenKhachHang, hangThanhVien, gioiTinh, thoiGianTao, maNhanVien) VALUES
+('KH001', '0900000001', N'Nguyễn Văn A',       N'Thường',   1, '2024-01-05', 'NV001'),
+('KH002', '0900000002', N'Trần Thị B',         N'Bạc',      0, '2024-01-06', 'NV002'),
+('KH003', '0900000003', N'Lê Văn C',           N'Vàng',     1, '2024-01-07', 'NV003'),
+('KH004', '0900000004', N'Phạm Thị D',         N'Kim Cương',0, '2024-01-08', 'NV004'),
+('KH005', '0900000005', N'Võ Văn E',           N'Thường',   1, '2024-02-01', 'NV005'),
+('KH006', '0900000006', N'Đỗ Thị F',           N'Bạc',      0, '2024-02-02', 'NV006'),
+('KH007', '0900000007', N'Bùi Văn G',          N'Vàng',     1, '2024-02-03', 'NV007'),
+('KH008', '0900000008', N'Đặng Thị H',         N'Kim Cương',0, '2024-02-04', 'NV008'),
+('KH009', '0900000009', N'Ngô Văn I',          N'Thường',   1, '2024-03-10', 'NV009'),
+('KH010', '0900000010', N'Phan Thị K',         N'Bạc',      0, '2024-03-11', 'NV010'),
+
+('KH011', '0900000011', N'Nguyễn Thị L',       N'Vàng',     0, '2024-03-12', 'NV011'),
+('KH012', '0900000012', N'Trần Văn M',         N'Kim Cương',1, '2024-03-13', 'NV012'),
+('KH013', '0900000013', N'Lê Thị N',           N'Thường',   0, '2024-04-01', 'NV013'),
+('KH014', '0900000014', N'Phạm Văn O',         N'Bạc',      1, '2024-04-02', 'NV014'),
+('KH015', '0900000015', N'Võ Thị P',           N'Vàng',     0, '2024-04-03', 'NV015'),
+('KH016', '0900000016', N'Đỗ Văn Q',           N'Kim Cương',1, '2024-04-04', 'NV016'),
+('KH017', '0900000017', N'Bùi Thị R',          N'Thường',   0, '2024-05-06', 'NV017'),
+('KH018', '0900000018', N'Đặng Văn S',         N'Bạc',      1, '2024-05-07', 'NV018'),
+('KH019', '0900000019', N'Ngô Thị T',          N'Vàng',     0, '2024-05-08', 'NV019'),
+('KH020', '0900000020', N'Phan Văn U',         N'Kim Cương',1, '2024-05-09', 'NV020'),
+
+('KH021', '0900000021', N'Nguyễn Thị V',       N'Thường',   0, '2024-06-15', 'NV021'),
+('KH022', '0900000022', N'Trần Văn X',         N'Bạc',      1, '2024-06-16', 'NV022'),
+('KH023', '0900000023', N'Lê Thị Y',           N'Vàng',     0, '2024-06-17', 'NV023'),
+('KH024', '0900000024', N'Phạm Văn Z',         N'Kim Cương',1, '2024-06-18', 'NV024'),
+('KH025', '0900000025', N'Võ Minh An',         N'Thường',   1, '2024-07-01', 'NV025'),
+('KH026', '0900000026', N'Đỗ Mỹ Bình',         N'Bạc',      0, '2024-07-02', 'NV026'),
+('KH027', '0900000027', N'Bùi Hoàng C',        N'Vàng',     1, '2024-07-03', 'NV027'),
+('KH028', '0900000028', N'Đặng Thu D',         N'Kim Cương',0, '2024-07-04', 'NV028'),
+('KH029', '0900000029', N'Ngô Nhật E',         N'Thường',   1, '2024-08-05', 'NV029'),
+('KH030', '0900000030', N'Phan Hải F',         N'Bạc',      0, '2024-08-06', 'NV030'),
+
+('KH031', '0900000031', N'Nguyễn Ngọc G',      N'Vàng',     1, '2024-08-07', 'NV031'),
+('KH032', '0900000032', N'Trần Khánh H',       N'Kim Cương',0, '2024-08-08', 'NV032'),
+('KH033', '0900000033', N'Lê Trà I',           N'Thường',   1, '2024-09-10', 'NV033'),
+('KH034', '0900000034', N'Phạm Thu J',         N'Bạc',      0, '2024-09-11', 'NV034'),
+('KH035', '0900000035', N'Võ Quốc K',          N'Vàng',     1, '2024-09-12', 'NV035'),
+('KH036', '0900000036', N'Đỗ Kim L',           N'Kim Cương',0, '2024-09-13', 'NV036'),
+('KH037', '0900000037', N'Bùi Tuấn M',         N'Thường',   1, '2024-10-01', 'NV037'),
+('KH038', '0900000038', N'Đặng Quỳnh N',       N'Bạc',      0, '2024-10-02', 'NV038'),
+('KH039', '0900000039', N'Ngô Thế O',          N'Vàng',     1, '2024-10-03', 'NV039'),
+('KH040', '0900000040', N'Phan Hữu P',         N'Kim Cương',0, '2024-10-04', 'NV040'),
+
+('KH041', '0900000041', N'Nguyễn Gia Q',       N'Thường',   1, '2024-11-06', 'NV041'),
+('KH042', '0900000042', N'Trần Ý R',           N'Bạc',      0, '2024-11-07', 'NV042'),
+('KH043', '0900000043', N'Lê Bảo S',           N'Vàng',     1, '2024-11-08', 'NV043'),
+('KH044', '0900000044', N'Phạm Nhật T',        N'Kim Cương',0, '2024-11-09', 'NV044'),
+('KH045', '0900000045', N'Võ Trúc U',          N'Thường',   1, '2024-12-01', 'NV045'),
+('KH046', '0900000046', N'Đỗ Thiên V',         N'Bạc',      0, '2024-12-02', 'NV046'),
+('KH047', '0900000047', N'Bùi Thanh W',        N'Vàng',     1, '2024-12-03', 'NV047'),
+('KH048', '0900000048', N'Đặng Mai X',         N'Kim Cương',0, '2024-12-04', 'NV048'),
+('KH049', '0900000049', N'Ngô Đức Y',          N'Thường',   1, '2025-01-05', 'NV049'),
+('KH050', '0900000050', N'Phan Hạ Z',          N'Bạc',      0, '2025-01-06', 'NV050');
 INSERT INTO KeThuoc (maKe, viTri, loaiKe, sucChua) VALUES
 ('KE001', N'Khu A - Hàng 1',        N'Kệ OTC',                    120),
 ('KE002', N'Khu A - Hàng 2',        N'Kệ kê đơn',                 100),
@@ -285,8 +324,6 @@ INSERT INTO KeThuoc (maKe, viTri, loaiKe, sucChua) VALUES
 ('KE010', N'Kho lạnh - Ngăn 2',     N'Kệ lạnh',                   60),
 ('KE011', N'Quầy dược sĩ - Sau quầy', N'Tủ thuốc kê đơn',         80),
 ('KE012', N'Kho tổng - Kệ pallet 1',  N'Kệ lưu trữ dự phòng',     300);
-
-
 INSERT INTO Thue (maThue, tenThue, hieuLucTu, hetHieuLuc, phanTramThue) VALUES
 ('TH001', N'Thuế VAT 5%',        '2022-01-01', '2023-12-31', 0.05),
 ('TH002', N'Thuế VAT 8%',        '2024-01-01', '2024-12-31', 0.08),
@@ -294,10 +331,6 @@ INSERT INTO Thue (maThue, tenThue, hieuLucTu, hetHieuLuc, phanTramThue) VALUES
 ('TH004', N'Thuế Tiêu thụ đặc biệt 20%', '2023-01-01', '2027-12-31', 0.20),
 ('TH005', N'Thuế Bảo vệ môi trường 3%',  '2022-06-01', '2026-05-31', 0.03),
 ('TH006', N'Thuế Nhập khẩu ưu đãi 2%',   '2023-04-01', '2026-03-31', 0.02);
-
-insert into KhuyenMai values
-('KM001','Khuyến mãi khai trương','2025-01-01','2025-12-12',10,1)
-
 INSERT INTO NhomThuoc (maNhom, tenNhom, maThue) VALUES
 ('NH001', N'Giảm đau - Hạ sốt',                 'TH003'), 
 ('NH002', N'Kháng sinh',                        'TH003'),
@@ -421,5 +454,107 @@ INSERT INTO Thuoc (maThuoc, tenThuoc, hamLuong, dangThuoc, giaThuoc, donViTinh, 
 ('T098',  N'Linearin (Giả lập)',       N'50mg',   N'Viên nén',      5600.0,  'viên',  N'Dược Demo',          N'Đang Kinh Doanh',  'imgs/t098.jpg',  'KE002', 'NV048', 'NH001'),
 ('T099',  N'Zinc sulfate',             N'20mg',   N'Viên nén',      1500.0,  'viên',  N'Dược Dinh Dưỡng',    N'Ngừng Kinh Doanh', 'imgs/t099.jpg',  'KE003', 'NV049', 'NH004'),
 ('T100',  N'ORS',                      N'...',    N'Gói bột',       1200.0,  'gói',   N'Dược Dinh Dưỡng',    N'Đang Kinh Doanh',  'imgs/t100.jpg',  'KE004', 'NV050', 'NH006');
+INSERT INTO LoThuoc (maLoThuoc, soLo, ngaySanXuat, ngayHetHan, giaNhap, soLuongTon, maThuoc) VALUES
+-- Paracetamol (T001)
+('LT001', 'SL2501A', '2024-01-15', '2026-01-14', 1200.0, 500, 'T001'),
+('LT002', 'SL2506B', '2024-06-10', '2026-06-09', 1250.0, 320, 'T001'),
+-- Amoxicillin (T002)
+('LT003', 'SL2502C', '2024-02-05', '2026-02-04', 2900.0, 400, 'T002'),
+('LT004', 'SL2510D', '2024-10-01', '2026-09-30', 2950.0, 250, 'T002'),
+-- Azithromycin (T003)
+('LT005', 'SL2503E', '2024-03-08', '2026-03-07', 4800.0, 220, 'T003'),
+-- Ibuprofen (T004)
+('LT006', 'SL2504F', '2024-04-12', '2026-04-11', 2000.0, 450, 'T004'),
+('LT007', 'SL2511G', '2024-11-03', '2026-11-02', 2050.0, 180, 'T004'),
+-- Naproxen (T005)
+('LT008', 'SL2505H', '2024-05-01', '2026-04-30', 2600.0, 260, 'T005'),
+-- Acetylcystein (T006)
+('LT009', 'SL2506I', '2024-06-18', '2026-06-17', 6100.0, 180, 'T006'),
+-- Loratadine (T007)
+('LT010', 'SL2507J', '2024-07-09', '2026-07-08', 2800.0, 320, 'T007'),
+-- Cetirizine (T008)
+('LT011', 'SL2508K', '2024-08-20', '2026-08-19', 2700.0, 200, 'T008'),
+-- Prednisolone (T009)
+('LT012', 'SL2509L', '2024-09-14', '2026-09-13', 1500.0, 190, 'T009'),
+-- Dexamethasone (T010)
+('LT013', 'SL2510M', '2024-10-05', '2026-10-04', 1400.0, 210, 'T010'),
+-- Omeprazole (T011)
+('LT014', 'SL2511N', '2024-11-07', '2026-11-06', 3000.0, 340, 'T011'),
+-- Pantoprazole (T012)
+('LT015', 'SL2512O', '2024-12-01', '2026-11-30', 4200.0, 200, 'T012'),
+-- Metformin (T013)
+('LT016', 'SL2501P', '2024-01-22', '2026-01-21', 1800.0, 600, 'T013'),
+-- Gliclazide (T014)
+('LT017', 'SL2502Q', '2024-02-16', '2026-02-15', 2600.0, 280, 'T014'),
+-- Amlodipine (T015)
+('LT018', 'SL2503R', '2024-03-11', '2026-03-10', 2300.0, 350, 'T015'),
+-- Losartan (T016)
+('LT019', 'SL2504S', '2024-04-09', '2026-04-08', 3100.0, 300, 'T016'),
+-- Perindopril (T017)
+('LT020', 'SL2505T', '2024-05-20', '2026-05-19', 3300.0, 240, 'T017'),
+-- Atorvastatin (T018)
+('LT021', 'SL2506U', '2024-06-25', '2026-06-24', 5200.0, 260, 'T018'),
+-- Simvastatin (T019)
+('LT022', 'SL2507V', '2024-07-18', '2026-07-17', 2400.0, 280, 'T019'),
+-- Clopidogrel (T020)
+('LT023', 'SL2508W', '2024-08-02', '2026-08-01', 7300.0, 180, 'T020'),
+('LT024', 'SL2512X', '2024-12-15', '2026-12-14', 7400.0, 150, 'T020'),
+-- Vitamin C (T025)
+('LT025', 'SL2509Y', '2024-09-06', '2026-09-05', 4300.0, 500, 'T025'),
+-- Vitamin B1 (T026)
+('LT026', 'SL2510Z', '2024-10-10', '2026-10-09', 600.0, 700, 'T026'),
+-- Magnesium B6 (T027)
+('LT027', 'SL2511A', '2024-11-12', '2026-11-11', 3000.0, 260, 'T027'),
+-- Kali clorid (T028)
+('LT028', 'SL2512B', '2024-12-20', '2026-12-19', 2400.0, 220, 'T028'),
+-- Domperidone (T029)
+('LT029', 'SL2501C', '2024-01-28', '2026-01-27', 1900.0, 310, 'T029'),
+-- Esomeprazole (T030)
+('LT030', 'SL2502D', '2024-02-22', '2026-02-21', 4200.0, 260, 'T030'),
+-- Ciprofloxacin (T033)
+('LT031', 'SL2503E', '2024-03-25', '2026-03-24', 5800.0, 210, 'T033'),
+-- Clotrimazole (T049)
+('LT032', 'SL2504F', '2024-04-14', '2026-04-13', 12000.0, 140, 'T049'),
+-- ORS (T100)
+('LT033', 'SL2505G', '2024-05-05', '2026-05-04', 800.0, 900, 'T100'),
+-- Zinc sulfate (T099)
+('LT034', 'SL2506H', '2024-06-09', '2026-06-08', 900.0, 650, 'T099'),
+-- Insulin R (T021)
+('LT035', 'SL2507I', '2024-07-03', '2025-07-02', 82000.0, 90, 'T021'),
+-- Salbutamol (T023)
+('LT036', 'SL2508J', '2024-08-11', '2026-08-10', 36000.0, 130, 'T023'),
+-- Rabeprazole (T047)
+('LT037', 'SL2509K', '2024-09-19', '2026-09-18', 4200.0, 170, 'T047'),
+-- Ketoconazole (T050)
+('LT038', 'SL2510L', '2024-10-21', '2026-10-20', 15000.0, 120, 'T050'),
+-- Doxycycline (T097)
+('LT039', 'SL2511M', '2024-11-25', '2026-11-24', 3000.0, 230, 'T097'),
+-- Clindamycin (T094)
+('LT040', 'SL2512N', '2024-12-28', '2026-12-27', 5000.0, 210, 'T094');
+INSERT INTO KhuyenMai (maKhuyenMai, tenChuongTrinh, tuNgay, denNgay, phanTramGiamGia, dieuKienApDung) VALUES
+('KM001', N'Khai trương rộn ràng',      '2025-01-05', '2025-01-20', 0.10, 200000),
+('KM002', N'Mua nhiều giảm nhiều',      '2025-02-01', '2025-02-28', 0.08, 300000),
+('KM003', N'Cuối tuần vui vẻ',          '2025-03-01', '2025-03-31', 0.05, 150000),
+('KM004', N'Chăm sóc mùa dịch',         '2025-04-10', '2025-04-25', 0.12, 250000),
+('KM005', N'Ngày vàng giá sốc',         '2025-05-15', '2025-05-17', 0.15, 100000),
+('KM006', N'Ưu đãi hội viên Bạc',       '2025-06-01', '2025-06-30', 0.07, 100000),
+('KM007', N'Ưu đãi hội viên Vàng',      '2025-06-01', '2025-06-30', 0.10, 100000),
+('KM008', N'Ưu đãi hội viên Kim cương', '2025-06-01', '2025-06-30', 0.15, 100000),
+('KM009', N'Back to school',            '2025-08-15', '2025-09-15', 0.06, 180000),
+('KM010', N'Tri ân khách hàng',          '2025-10-01', '2025-10-31', 0.09, 200000),
+('KM011', N'Ngày 11.11 săn sale',       '2025-11-10', '2025-11-12', 0.20, 150000),
+('KM012', N'Cuối năm rộn ràng',         '2025-12-15', '2025-12-31', 0.12, 250000);
 
+insert into NhaCungCap values
+('NCC001',N'Long Châu','0913343123','tphcm'),
+('NCC002',N'Minh Châu','0913343456','tphcm'),
+('NCC003',N'Pharmacity','0911343123','tphcm')
+
+
+insert into PhieuNhap (maPhieuNhap, ngayNhap, maNhaCungCap, maNhanVien)values
+('PN001','2025-8-10','NCC001','NV001'),
+('PN002','2025-8-10','NCC002','NV002')
+insert into ChiTietPhieuNhap values
+(50,'132000','PN001','LT01'),
+(80,'142000','PN002','LT02')
 
