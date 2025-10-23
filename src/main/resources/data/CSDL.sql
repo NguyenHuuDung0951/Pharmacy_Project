@@ -56,6 +56,7 @@ create table KhachHang
 	gioiTinh bit not null,
 	thoiGianTao date not null,
 	maNhanVien varchar(20) not null,
+	trangThai bit default 1,
 	foreign key (maNhanVien) references NhanVien(maNhanVien)
 )
 create table PhieuDoiTra
@@ -193,7 +194,7 @@ create table ChiTietPhieuDat
 	foreign key (maPhieuDat) references PhieuDat(maPhieuDat),
 	foreign key (maThuoc) references Thuoc(maThuoc)
 )
-INSERT INTO KhachHang values 
+INSERT INTO KhachHang(maKhachHang,soDienThoai,tenKhachHang,hangThanhVien,gioiTinh,thoiGianTao,maNhanVien) Values
 ('KH2', '0917774020', 'Lê Hoàng Khang', 'Vip', 0, '2025-02-26', 'NV001'),
 ('KH3', '0918011626', 'Nguyễn Văn Sỹ', 'Thường', 1, '2025-09-10', 'NV001');
 
