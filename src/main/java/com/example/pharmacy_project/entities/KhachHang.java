@@ -1,8 +1,10 @@
 package com.example.pharmacy_project.entities;
 
+import javafx.scene.control.TreeItem;
+
 import java.time.LocalDate;
 
-public class KhachHang {
+public class KhachHang extends TreeItem<KhachHang> {
     private String maKhachHang;
     private String soDienThoai;
     private String tenKhachHang;
@@ -10,7 +12,17 @@ public class KhachHang {
     private boolean gioiTinh;
     private LocalDate thoiGianTao;
     private NhanVien nhanVien;
-
+    private boolean trangThai;
+    public KhachHang(String maKhachHang, String soDienThoai, String tenKhachHang, String hangThanhVien, boolean gioiTinh, LocalDate thoiGianTao, NhanVien nhanVien,boolean trangThai) {
+        this.maKhachHang = maKhachHang;
+        this.soDienThoai = soDienThoai;
+        this.tenKhachHang = tenKhachHang;
+        this.hangThanhVien = hangThanhVien;
+        this.gioiTinh = gioiTinh;
+        this.thoiGianTao = thoiGianTao;
+        this.nhanVien = nhanVien;
+        this.trangThai=trangThai;
+    }
     public KhachHang(String maKhachHang, String soDienThoai, String tenKhachHang, String hangThanhVien, boolean gioiTinh, LocalDate thoiGianTao, NhanVien nhanVien) {
         this.maKhachHang = maKhachHang;
         this.soDienThoai = soDienThoai;
@@ -20,8 +32,15 @@ public class KhachHang {
         this.thoiGianTao = thoiGianTao;
         this.nhanVien = nhanVien;
     }
-
     public KhachHang() {
+    }
+
+    public boolean isTrangThai() {
+        return trangThai;
+    }
+
+    public void setTrangThai(boolean trangThai) {
+        this.trangThai = trangThai;
     }
 
     public KhachHang (String maKhachHang) {
@@ -116,4 +135,6 @@ public class KhachHang {
                 ", nhanVien=" + nhanVien +
                 '}';
     }
+
+
 }

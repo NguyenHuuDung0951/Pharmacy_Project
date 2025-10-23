@@ -9,10 +9,7 @@ import com.example.pharmacy_project.connectDB.ConnectDB;
 import com.example.pharmacy_project.entities.KhachHang;
 import com.example.pharmacy_project.entities.NhanVien;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -29,7 +26,7 @@ public class KhachHangDAO {
         try {
             ConnectDB.getInstance();
             Connection con = ConnectDB.getConnection();
-            String sql = "Select * from KhachHang";
+            String sql = "Select * from KhachHang where trangThai=1";
             Statement statement = con.createStatement();
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) {
@@ -40,8 +37,9 @@ public class KhachHangDAO {
                 boolean gioiTinh = rs.getBoolean(5);
                 LocalDate thoiGianTao = rs.getDate(6).toLocalDate();
                 String maNhanVien = rs.getString(7);
+                boolean trangThai=rs.getBoolean(8);
                 NhanVien nv = new NhanVien(maNhanVien);
-                KhachHang kh = new KhachHang(maKhachHang, soDienThoai, tenKhachHang, hangThanhVien, gioiTinh, thoiGianTao, nv);
+                KhachHang kh = new KhachHang(maKhachHang, soDienThoai, tenKhachHang, hangThanhVien, gioiTinh, thoiGianTao, nv,trangThai);
                 dsKhachHang.add(kh);
             }
 
@@ -50,4 +48,71 @@ public class KhachHangDAO {
         }
         return dsKhachHang;
     }
+    public boolean themKhachHang(KhachHang kh)
+    {
+
+        String sql="Insert Into KhachHang(maKhachHang,soDienThoai,tenKhachHang,hangThanhVien,gioiTinh,thoiGianTao,maNhanVien) Values(?,?,?,?,?,?,?) ";
+        try{
+            ConnectDB.getInstance();
+            Connection con=ConnectDB.getConnection();
+            PreparedStatement stmt=con.prepareStatement(sql);
+            stmt.setString(1,kh.getMaKhachHang());
+            stmt.setString(2,kh.getSoDienThoai());
+            stmt.setString(3,kh.getTenKhachHang());
+            stmt.setString(4,kh.getHangThanhVien());
+            stmt.setBoolean(5,kh.isGioiTinh());
+            stmt.setDate(6,Date.valueOf(kh.getThoiGianTao()) );
+            stmt.setString(7,kh.getMaNhanVien());
+
+            return stmt.executeUpdate()>0;
+
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return false;
+    }
+    public boolean capNhatKhachHang(KhachHang kh)
+    {
+        String sql="Update KhachHang Set soDienThoai=?,tenKhachHang=?,hangThanhVien=?,gioiTinh=?,thoiGianTao=?";
+        try
+        {
+            ConnectDB.getInstance();
+            Connection con=ConnectDB.getConnection();
+            PreparedStatement stmt=con.prepareStatement(sql);
+
+            stmt.setString(1,kh.getSoDienThoai());
+            stmt.setString(2,kh.getTenKhachHang());
+            stmt.setString(3,kh.getHangThanhVien());
+            stmt.setBoolean(4,kh.isGioiTinh());
+            stmt.setDate(5  ,Date.valueOf(kh.getThoiGianTao()) );
+
+            return stmt.executeUpdate()>0;
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return false;
+    }
+    public boolean xoaKhachHang(String maKhachHang)
+    {
+        String sql="Update KhachHang Set trangThai=0 Where maKhachHang=?";
+        try{
+            ConnectDB.getInstance();
+            Connection con=ConnectDB.getConnection();
+            PreparedStatement stmt=con.prepareStatement(sql);
+            stmt.setString(1,maKhachHang);
+            return stmt.executeUpdate()>0;
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+
+
 }

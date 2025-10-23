@@ -8,9 +8,7 @@ package com.example.pharmacy_project.dao;
 import com.example.pharmacy_project.connectDB.ConnectDB;
 import com.example.pharmacy_project.entities.KhuyenMai;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -44,5 +42,64 @@ public class KhuyenMaiDAO {
             throw new RuntimeException(e);
         }
         return dsKM;
+    }
+    public boolean themKhuyenMai(KhuyenMai km)
+    {
+        String sql="Insert Into KhuyenMai(maKhuyenMai,tenChuongTrinh,tuNgay,denNgay,phanTramGiamGia,dieuKienApDung) Values(?,?,?,?,?,?)";
+      try
+      {
+          ConnectDB.getInstance();
+          Connection con=ConnectDB.getConnection();
+          PreparedStatement stmt=con.prepareStatement(sql);
+          stmt.setString(1,km.getMaKM());
+          stmt.setString(2,km.getTenCT());
+          stmt.setDate(3, Date.valueOf(km.getTuNgay()));
+          stmt.setDate(4,Date.valueOf(km.getDenNgay()));
+          stmt.setInt(5, (int) km.getPhanTramGiamGia());
+          stmt.setDouble(6,km.getDieuKienApDung());
+          return stmt.executeUpdate()>0;
+      }
+      catch (Exception e)
+      {
+          e.printStackTrace();
+      }
+      return false;
+    }
+    public boolean xoaKhuyenMai(String maKhuyenMai)
+    {
+        String sql="Update KhuyenMai Set TrangThai=0 Where maKhuyenMai=?";
+        try{
+            ConnectDB.getInstance();
+            Connection con=ConnectDB.getConnection();
+            PreparedStatement stmt=con.prepareStatement(sql);
+            stmt.setString(1,maKhuyenMai);
+            return stmt.executeUpdate()>0;
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return false;
+    }
+    public boolean capNhatKhuyenMai(KhuyenMai km)
+    {
+        String sql="Update KhuyenMai Set tenChuongTrinh=?,tuNgay=?,denNgay=?,phanTramGiamGia=?,dieuKienApDung=?";
+       try {
+           ConnectDB.getInstance();
+           Connection con=ConnectDB.getConnection();
+           PreparedStatement stmt=con.prepareStatement(sql);
+           stmt.setString(1,km.getTenCT());
+           stmt.setDate(2, Date.valueOf(km.getTuNgay()));
+           stmt.setDate(3,Date.valueOf(km.getDenNgay()));
+           stmt.setDouble(4,km.getPhanTramGiamGia());
+           stmt.setInt(5,km.getDieuKienApDung());
+           return stmt.executeUpdate()>0;
+
+       }
+       catch (Exception e)
+       {
+           e.printStackTrace();
+       }
+       return false;
     }
 }

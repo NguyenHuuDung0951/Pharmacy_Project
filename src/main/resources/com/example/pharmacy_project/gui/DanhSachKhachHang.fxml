@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmacy_project.controller.DanhSachKhachHangController">
+<AnchorPane prefHeight="600.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmacy_project.controller.DanhSachKhachHangController">
    <children>
       <BorderPane layoutX="14.0" layoutY="7.0" prefHeight="600.0" prefWidth="1366.0">
          <top>
@@ -22,7 +22,17 @@
                         <Font size="18.0" />
                      </font>
                   </TextField>
-                  <TextField layoutX="321.0" layoutY="17.0" prefHeight="36.0" prefWidth="617.0" promptText="Tìm kiếm " style="-fx-background-radius: 50px;" />
+                  <TextField fx:id="txtTimKiem" layoutX="321.0" layoutY="17.0" prefHeight="36.0" prefWidth="617.0" promptText="Tìm kiếm " style="-fx-background-radius: 50px;" />
+                  <Button fx:id="btnXoa" layoutX="1207.0" layoutY="19.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="87.0" style="-fx-background-radius: 50; -fx-background-color: red;" text="Xóa" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnSua" layoutX="1081.0" layoutY="19.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="87.0" style="-fx-background-radius: 50; -fx-background-color: blue;" text="Sửa" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Button>
                </children>
             </Pane>
          </top>
@@ -59,7 +69,7 @@
             </TableView>
          </center>
          <bottom>
-            <ComboBox prefWidth="150.0" style="-fx-background-radius: 50;" />
+            <ComboBox fx:id="sodong" prefWidth="150.0" style="-fx-background-radius: 50;" />
          </bottom>
       </BorderPane>
    </children>

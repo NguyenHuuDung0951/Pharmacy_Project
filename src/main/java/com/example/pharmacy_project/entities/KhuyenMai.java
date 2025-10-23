@@ -9,7 +9,19 @@ public class KhuyenMai {
     private LocalDate denNgay;
     private double phanTramGiamGia;
     private int dieuKienApDung;
-
+    private boolean trangThai;
+    public KhuyenMai(String maKM, String tenCT, LocalDate tuNgay, LocalDate denNgay, double phanTramGiamGia, int dieuKienApDung,boolean trangThai) {
+        this.maKM = maKM;
+        setMaKM(maKM);
+        this.tenCT = tenCT;
+        setTenCT(tenCT);
+        this.tuNgay = tuNgay;
+        this.denNgay = denNgay;
+        this.phanTramGiamGia = phanTramGiamGia;
+        setPhanTramGiamGia(phanTramGiamGia);
+        this.dieuKienApDung = dieuKienApDung;
+        this.trangThai=trangThai;
+    }
     public KhuyenMai(String maKM, String tenCT, LocalDate tuNgay, LocalDate denNgay, double phanTramGiamGia, int dieuKienApDung) {
         this.maKM = maKM;
         setMaKM(maKM);
@@ -20,6 +32,14 @@ public class KhuyenMai {
         this.phanTramGiamGia = phanTramGiamGia;
         setPhanTramGiamGia(phanTramGiamGia);
         this.dieuKienApDung = dieuKienApDung;
+    }
+
+    public boolean isTrangThai() {
+        return trangThai;
+    }
+
+    public void setTrangThai(boolean trangThai) {
+        this.trangThai = trangThai;
     }
 
     public KhuyenMai() {
