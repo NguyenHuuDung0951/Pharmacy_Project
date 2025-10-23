@@ -1,5 +1,7 @@
 package com.example.pharmacy_project.entities;
 
+import java.util.Objects;
+
 public class NhanVien {
     private String maNhanVien;
     private String tenNhanVien;
@@ -93,5 +95,18 @@ public class NhanVien {
                 ", chucVu=" + chucVu +
                 ", taiKhoan=" + taiKhoan +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        NhanVien nhanVien = (NhanVien) o;
+        return Objects.equals(maNhanVien, nhanVien.maNhanVien);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(maNhanVien);
     }
 }

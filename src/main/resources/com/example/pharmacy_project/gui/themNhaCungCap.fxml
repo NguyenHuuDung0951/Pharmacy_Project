@@ -7,22 +7,18 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="14.0" layoutY="14.0" prefHeight="48.0" prefWidth="150.0" text="Tạo Nhà Cung Cấp">
+      <Label layoutX="14.0" layoutY="14.0" prefHeight="48.0" prefWidth="204.0" text="Tạo Nhà Cung Cấp">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Label>
       <Label layoutX="45.0" layoutY="62.0" prefHeight="17.0" prefWidth="102.0" text="Tên nhà cung cấp" />
-      <TextField layoutX="45.0" layoutY="90.0" prefHeight="25.0" prefWidth="313.0" promptText="Bắt Buộc" style="-fx-background-radius: 50px;" />
-      <Label layoutX="437.0" layoutY="62.0" prefHeight="17.0" prefWidth="102.0" text="Mã nhà cung cấp" />
-      <TextField layoutX="437.0" layoutY="90.0" prefHeight="25.0" prefWidth="313.0" promptText="Tự Động" style="-fx-background-radius: 50px;" />
-      <Label layoutX="45.0" layoutY="146.0" prefHeight="17.0" prefWidth="102.0" text="Số điện thoại" />
-      <TextField layoutX="45.0" layoutY="175.0" prefHeight="25.0" prefWidth="313.0" style="-fx-background-radius: 50px;" />
-      <Label layoutX="45.0" layoutY="218.0" prefHeight="17.0" prefWidth="102.0" text="Địa Chỉ" />
-      <TextField layoutX="45.0" layoutY="246.0" prefHeight="25.0" prefWidth="715.0" style="-fx-background-radius: 50px;" />
-      <Label layoutX="45.0" layoutY="286.0" prefHeight="17.0" prefWidth="102.0" text="Khu vực" />
-      <TextField layoutX="45.0" layoutY="318.0" prefHeight="25.0" prefWidth="313.0" promptText="Nhập Khu Vực" style="-fx-background-radius: 50px;" />
-      <Label layoutX="437.0" layoutY="286.0" prefHeight="17.0" prefWidth="102.0" text="Phường/Xã" />
-      <TextField layoutX="437.0" layoutY="318.0" prefHeight="25.0" prefWidth="313.0" promptText="Nhập Phường/Xã" style="-fx-background-radius: 50px;" />
+      <TextField layoutX="45.0" layoutY="90.0" prefHeight="25.0" prefWidth="593.0" promptText="Bắt Buộc" style="-fx-background-radius: 50px;" />
+      <Label layoutX="760.0" layoutY="62.0" prefHeight="17.0" prefWidth="102.0" text="Mã nhà cung cấp" />
+      <TextField layoutX="748.0" layoutY="90.0" prefHeight="25.0" prefWidth="593.0" promptText="Tự Động" style="-fx-background-radius: 50px;" />
+      <Label layoutX="45.0" layoutY="185.0" prefHeight="17.0" prefWidth="102.0" text="Số điện thoại" />
+      <TextField layoutX="45.0" layoutY="219.0" prefHeight="25.0" prefWidth="1296.0" style="-fx-background-radius: 50px;" />
+      <Label layoutX="45.0" layoutY="323.0" prefHeight="17.0" prefWidth="102.0" text="Địa Chỉ" />
+      <TextField layoutX="45.0" layoutY="352.0" prefHeight="25.0" prefWidth="1296.0" style="-fx-background-radius: 50px;" />
    </children>
 </Pane>
