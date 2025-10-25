@@ -10,7 +10,7 @@
    <top>
       <Pane prefHeight="74.0" prefWidth="634.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="14.0" layoutY="14.0" style="-fx-font-weight: bold;" text="Thêm mới nhân viên">
+            <Label layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="331.0" style="-fx-font-weight: bold;" text="Cập Nhật Thông Tin Nhân Viên">
                <font>
                   <Font size="20.0" />
                </font>
@@ -26,12 +26,12 @@
    <bottom>
       <Pane prefHeight="63.0" prefWidth="767.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btnQuayLai" onAction="#handleQuayLai" layoutX="573.0" layoutY="13.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: grey; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Quay Lại" textFill="WHITE">
+            <Button fx:id="btnQuayLai" layoutX="573.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleQuayLai" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: grey; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Quay Lại" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button fx:id="btnLuu" onAction="#handleLuu" layoutX="725.0" layoutY="14.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="67.0" style="-fx-background-color: #0070F4; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Lưu" textFill="WHITE">
+            <Button fx:id="btnLuu" layoutX="725.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleLuu" prefHeight="35.0" prefWidth="67.0" style="-fx-background-color: #0070F4; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Lưu" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
@@ -46,20 +46,11 @@
                <children>
                   <Pane layoutX="25.0" layoutY="22.0" prefHeight="274.0" prefWidth="256.0" style="-fx-background-color: #EEEEEE;">
                      <children>
-                        <ImageView fx:id="imgNhanVien"
-                                   fitHeight="278.0" fitWidth="257.0"
-                                   layoutX="-2.0"
-                                   pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="imgNhanVien" fitHeight="278.0" fitWidth="257.0" layoutX="-2.0" pickOnBounds="true" preserveRatio="true" />
                      </children>
                   </Pane>
 
-                  <Button fx:id="btnChonAnh"
-                          layoutX="104.0" layoutY="326.0"
-                          mnemonicParsing="false"
-                          prefHeight="35.0" prefWidth="100.0"
-                          style="-fx-background-radius: 10px; -fx-background-color: #0070F4; -fx-border-radius: 10px;"
-                          text="Chọn ảnh" textFill="WHITE"
-                          onAction="#handleChonAnh">
+                  <Button fx:id="btnChonAnh" layoutX="104.0" layoutY="326.0" mnemonicParsing="false" onAction="#handleChonAnh" prefHeight="35.0" prefWidth="100.0" style="-fx-background-radius: 10px; -fx-background-color: #0070F4; -fx-border-radius: 10px;" text="Sửa ảnh" textFill="WHITE">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -73,24 +64,24 @@
          <center>
             <Pane prefHeight="202.0" prefWidth="543.0" style="-fx-background-color: white; -fx-background-radius: 10px; -fx-border-radius: 10px;">
                <children>
-                  <Label layoutX="14.0" layoutY="14.0" style="-fx-font-weight: bold;" text="Thông tin khởi tạo">
+                  <Label layoutX="423.0" layoutY="32.0" prefHeight="27.0" prefWidth="249.0" style="-fx-font-weight: bold;" text="Thông Tin Nhân Viên">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="12.0" layoutY="105.0" text="Tên nhân viên">
+                  <Label layoutX="622.0" layoutY="114.0" text="Tên nhân viên">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="txtTenNhanVien" layoutX="115.0" layoutY="101.0" prefHeight="27.0" prefWidth="425.0" style="-fx-background-color: white; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-border-color: #DDDDDD;" />
+                  <TextField fx:id="txtTenNhanVien" layoutX="718.0" layoutY="110.0" prefHeight="27.0" prefWidth="323.0" style="-fx-background-color: white; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-border-color: #DDDDDD;" />
                   <Label layoutX="15.0" layoutY="170.0" text="Số điện thoại">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
                   <TextField fx:id="txtSoDienThoai" layoutX="115.0" layoutY="167.0" prefHeight="27.0" prefWidth="422.0" style="-fx-background-color: white; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-border-color: #DDDDDD;" />
-                  <Label layoutX="636.0" layoutY="170.0" text="Chức vụ">
+                  <Label layoutX="622.0" layoutY="171.0" text="Chức vụ">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -102,12 +93,18 @@
                      </font>
                   </Label>
                   <TextField fx:id="txtDiaChi" layoutX="115.0" layoutY="225.0" prefHeight="27.0" prefWidth="422.0" style="-fx-background-color: white; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-border-color: #DDDDDD;" />
-                  <Label layoutX="636.0" layoutY="228.0" text="Tài khoản">
+                  <Label layoutX="622.0" layoutY="229.0" text="Tài khoản">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
                   <ComboBox fx:id="cmbTaiKhoan" layoutX="718.0" layoutY="225.0" prefHeight="27.0" prefWidth="323.0" promptText="Chọn tài khoản" style="-fx-background-color: white; -fx-border-color: #DDDDDD; -fx-background-radius: 10px; -fx-border-radius: 10px;" />
+                  <Label layoutX="12.0" layoutY="114.0" text="Mã Nhân Viên">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtSoDienThoai1" layoutX="115.0" layoutY="111.0" prefHeight="27.0" prefWidth="422.0" style="-fx-background-color: white; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-border-color: #DDDDDD;" />
                </children>
             </Pane>
          </center>

@@ -65,7 +65,7 @@
                             <items>
                                 <MenuItem mnemonicParsing="false" onAction="#list_empl" text="Tìm kiếm nhân viên" />
                                 <MenuItem mnemonicParsing="false" onAction="#handle_addEmpl" text="Thêm nhân viên" />
-                                <MenuItem mnemonicParsing="false"  text="Cập nhật thông tin nhân viên" />
+                                <MenuItem mnemonicParsing="false" onAction="#handle_editEmpl"  text="Cập nhật thông tin nhân viên" />
                                 <MenuItem mnemonicParsing="false"  text="Xóa nhân viên" />
                                 <MenuItem mnemonicParsing="false"  text="Xem chi tiết nhân viên" />
 

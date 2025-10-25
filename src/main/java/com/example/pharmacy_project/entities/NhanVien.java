@@ -1,13 +1,15 @@
 package com.example.pharmacy_project.entities;
 
 public class NhanVien {
+    private String taiKhoan;
+    private String chucVu;
     private String maNhanVien;
     private String tenNhanVien;
     private String soDienThoai;
     private String diaChi;
     private String anhDaiDien;
 
-    public NhanVien(String maNhanVien, String tenNhanVien, String soDienThoai, String diaChi, String anhDaiDien) {
+    public NhanVien(String maNhanVien, String tenNhanVien, String soDienThoai, String diaChi, String anhDaiDien, String chucVu, String taiKhoan) {
         this.maNhanVien = maNhanVien;
 //        setMaNhanVien(maNhanVien);
         this.tenNhanVien = tenNhanVien;
@@ -17,8 +19,22 @@ public class NhanVien {
         this.diaChi = diaChi;
       //  setDiaChi(diaChi);
         this.anhDaiDien = anhDaiDien;
+        this.chucVu = chucVu;
+        this.taiKhoan = taiKhoan;
     }
 
+    public NhanVien(String maNhanVien, String tenNhanVien, String soDienThoai, String diaChi, String anhDaiDien) {
+        this.maNhanVien = maNhanVien;
+//        setMaNhanVien(maNhanVien);
+        this.tenNhanVien = tenNhanVien;
+//        setTenNhanVien(tenNhanVien);
+        this.soDienThoai = soDienThoai;
+        //setSoDienThoai(soDienThoai);
+        this.diaChi = diaChi;
+        //  setDiaChi(diaChi);
+        this.anhDaiDien = anhDaiDien;
+
+    }
     public NhanVien(NhanVien nv) {
         this.maNhanVien = nv.maNhanVien;
         this.tenNhanVien = nv.tenNhanVien;
@@ -27,7 +43,7 @@ public class NhanVien {
         this.anhDaiDien = nv.anhDaiDien;
     }
     public NhanVien(){
-        new NhanVien("","","","","");
+        new NhanVien("","","","","", chucVu, taiKhoan);
     }
     public NhanVien(String maNhanVien) {
         this.maNhanVien = maNhanVien;
@@ -65,6 +81,22 @@ public class NhanVien {
             throw new IllegalArgumentException("Tên Nhân Viên không được rỗng và từ 2-50 ký tự");
         }
         this.tenNhanVien = tenNhanVien;
+    }
+
+    public String getTaiKhoan() {
+        return taiKhoan;
+    }
+
+    public void setTaiKhoan(String taiKhoan) {
+        this.taiKhoan = taiKhoan;
+    }
+
+    public String getChucVu() {
+        return chucVu;
+    }
+
+    public void setChucVu(String chucVu) {
+        this.chucVu = chucVu;
     }
 
     public void setSoDienThoai(String soDienThoai) {

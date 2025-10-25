@@ -219,6 +219,14 @@ public class MainController {
             throw new RuntimeException(e);
         }
     }
+    public void handle_editEmpl(ActionEvent actionEvent) {
+        try {
+            Parent loader = FXMLLoader.load(getClass().getResource("/com/example/pharmacy_project/gui/suaNhanVien.fxml"));
+            rootPane.setCenter(loader);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     public void taoKhachHang(ActionEvent event) {
         try {

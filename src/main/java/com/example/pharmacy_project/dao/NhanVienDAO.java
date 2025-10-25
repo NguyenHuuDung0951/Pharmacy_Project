@@ -28,11 +28,11 @@ public class NhanVienDAO {
                 String maNv = rs.getString(1);
                 String tenNv = rs.getString(2);
                 String sdt = rs.getString(3);
-                 String diaChi = rs.getString(4);
-                String chucVu = rs.getString(5);
+                String diaChi = rs.getString(4);
+                String anhDaiDien = rs.getString(5);
 
 
-                NhanVien nv = new NhanVien(maNv,tenNv,sdt,diaChi,chucVu);
+                NhanVien nv = new NhanVien(maNv,tenNv,sdt,diaChi,anhDaiDien);
                 dsNv.add(nv);
             }
         }
@@ -66,4 +66,60 @@ public List<NhanVien> searchNhanVien(String keywork){
         }
         return result;
 }
+public boolean insertNhanVien(NhanVien nv){
+                String sql = """
+                INSERT INTO NhanVien(
+                    maNhanVien, tenNhanVien, soDienThoai, diaChi, anhDaiDien, maChucVu, maTaiKhoan
+                )
+                VALUES (
+                    ?, ?, ?, ?, ?,
+                    (SELECT maChucVu FROM ChucVu WHERE tenChucVu = ?),
+                    (SELECT maTaiKhoan FROM TaiKhoan WHERE tenDangNhap = ?)
+                )
+            """;
+
+    try {
+            ConnectDB.getInstance();
+            Connection con = ConnectDB.getConnection();
+            PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.setString(1, nv.getMaNhanVien());
+            stmt.setString(2, nv.getTenNhanVien());
+            stmt.setString(3, nv.getSoDienThoai());
+            stmt.setString(4,nv.getDiaChi());
+            stmt.setString(5,nv.getAnhDaiDien());
+            stmt.setString(6, nv.getChucVu());
+            stmt.setString(7,nv.getTaiKhoan());
+
+            int rows = stmt.executeUpdate();
+            return  rows > 0;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+}
+    public String generateMaNV(){
+        String nextMa = "NV001";
+        try {
+            ConnectDB.getInstance();
+            Connection con = ConnectDB.getConnection();
+
+            String sql = "SELECT TOP 1 maNhanVien FROM NhanVien ORDER BY maNhanVien DESC";
+            PreparedStatement stmt = con.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+
+            if(rs.next()){
+                String lastMa = rs.getString("maNhanVien");
+                if (lastMa.matches("^NV\\d{3}$")){
+                    int so = Integer.parseInt(lastMa.substring(2));
+                    so++;
+                    nextMa = String.format("NV%03d",so);
+                }
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return nextMa;
+    }
 }
