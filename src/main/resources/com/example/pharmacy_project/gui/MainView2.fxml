@@ -63,7 +63,7 @@
                                 <items>
                                   <MenuItem mnemonicParsing="false" onAction="#handle_dsPhieuNhap" text="Tra Cứu Phiếu Nhập" />
                                     <MenuItem mnemonicParsing="false" onAction="#handle_lapPhieuNhap" text="Thêm Phiếu Nhập" />
-                                    <MenuItem mnemonicParsing="false" text="Tra Cứu NCC" />
+                                    <MenuItem mnemonicParsing="false" onAction="#handle_danhSachNCC" text="Tra Cứu NCC" />
                                     <MenuItem mnemonicParsing="false" onAction="#handle_themNCC" text="Thêm NCC" />
                                 </items>
                               </Menu>

@@ -268,4 +268,13 @@ public class MainController {
             e.printStackTrace();
         }
     }
-}
+    public void handle_danhSachNCC(ActionEvent actionEvent) {
+        try{
+            Parent loader= FXMLLoader.load(getClass().getResource("/com/example/pharmacy_project/gui/dsNhaCungCap.fxml"));
+            rootPane.setCenter(loader);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }}
